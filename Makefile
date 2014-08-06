@@ -8,7 +8,7 @@ clone: gitlab/.git gitlab-shell/.git
 
 config: gitlab-shell/config.yml gitlab/config/gitlab.yml gitlab/config/database.yml gitlab/config/unicorn.rb
 
-bundle: gitlab-shell/.bundle gitlab/.bundle
+bundle: gitlab-shell-bundle gitlab-bundle
 
 gitlab/.git:
 	git clone ${gitlab_repo} gitlab
@@ -16,11 +16,11 @@ gitlab/.git:
 gitlab-shell/.git:
 	git clone ${gitlab_shell_repo} gitlab-shell
 
-gitlab/.bundle:
+gitlab-bundle:
 	cd gitlab && bundle install --without mysql
 
-gitlab-shell/.bundle:
-	cd gitlab-shell && bundle install --without mysql
+gitlab-shell-bundle:
+	cd gitlab-shell && bundle install
 
 gitlab/config/gitlab.yml:
 	sed "s|/home/git|${gitlab_development_root}|" gitlab/config/gitlab.yml.example > gitlab/config/gitlab.yml
