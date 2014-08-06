@@ -6,7 +6,7 @@ all: clone bundle config
 
 clone: gitlab/.git gitlab-shell/.git
 
-config: gitlab-shell/config.yml gitlab/config/gitlab.yml gitlab/config/database.yml
+config: gitlab-shell/config.yml gitlab/config/gitlab.yml gitlab/config/database.yml gitlab/config/unicorn.rb
 
 bundle: gitlab-shell/.bundle gitlab/.bundle
 
@@ -30,3 +30,6 @@ gitlab-shell/config.yml:
 
 gitlab/config/database.yml:
 	sed -e '/username:/d' -e '/password:/d' gitlab/config/database.yml.postgresql > gitlab/config/database.yml
+
+gitlab/config/unicorn.rb:
+	sed "s|/home/git|${gitlab_development_root}|" gitlab/config/unicorn.rb.example > gitlab/config/unicorn.rb
