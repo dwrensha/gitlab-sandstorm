@@ -1,1 +1,5 @@
-gitlab-shell/ .ssh/ gitlab-satellites/ repositories/ gitlab/
+gitlab-shell/
+.ssh/
+gitlab-satellites/
+repositories/
+gitlab/
