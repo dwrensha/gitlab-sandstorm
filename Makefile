@@ -36,7 +36,7 @@ gitlab-shell/.git:
 	git clone ${gitlab_shell_repo} gitlab-shell
 
 gitlab-shell/config.yml:
-	sed "s|/home/git|${gitlab_development_root}|;s|user: git|user: $(shell whoami)|" gitlab-shell/config.yml.example > gitlab-shell/config.yml
+	sed "s|/home/git|${gitlab_development_root}|" gitlab-shell/config.yml.example > gitlab-shell/config.yml
 
 gitlab-shell/.bundle:
 	cd ${gitlab_development_root}/gitlab-shell && bundle install --without production --jobs 4
