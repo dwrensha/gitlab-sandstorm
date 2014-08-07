@@ -2,6 +2,10 @@
 
 Run a GitLab development environment isolated in a directory.
 
+This project uses Foreman to run dedicated Postgres and Redis processes for
+GitLab development. All data is stored inside the gitlab-development-kit
+directory.
+
 ## Installation
 
 ### Requirements
