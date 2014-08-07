@@ -29,6 +29,7 @@ gitlab/.bundle:
 	cd ${gitlab_development_root}/gitlab && bundle install --without mysql production --jobs 4
 
 # Set up gitlab-shell
+
 gitlab-shell-setup: gitlab-shell/.git gitlab-shell/config.yml gitlab-shell/.bundle
 
 gitlab-shell/.git:
