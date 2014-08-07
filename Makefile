@@ -14,7 +14,7 @@ gitlab/.git:
 gitlab-config: gitlab/config/gitlab.yml gitlab/config/database.yml gitlab/config/unicorn.rb gitlab/config/resque.yml
 
 gitlab/config/gitlab.yml:
-	sed "s|/home/git|${gitlab_development_root}|" gitlab/config/gitlab.yml.example > gitlab/config/gitlab.yml
+	sed "s|/home/git|${gitlab_development_root}|;s|#user: git|user: $(shell whoami)|" gitlab/config/gitlab.yml.example > gitlab/config/gitlab.yml
 
 gitlab/config/database.yml:
 	sed "s|/home/git|${gitlab_development_root}|" database.yml.example > gitlab/config/database.yml
@@ -36,7 +36,7 @@ gitlab-shell/.git:
 	git clone ${gitlab_shell_repo} gitlab-shell
 
 gitlab-shell/config.yml:
-	sed "s|/home/git|${gitlab_development_root}|;s|user: git|user: $(shell whoami)|" gitlab-shell/config.yml.example > gitlab-shell/config.yml
+	sed "s|/home/git|${gitlab_development_root}|" gitlab-shell/config.yml.example > gitlab-shell/config.yml
 
 gitlab-shell/.bundle:
 	cd ${gitlab_development_root}/gitlab-shell && bundle install --without production --jobs 4
