@@ -26,7 +26,9 @@ the GitLab development and test environments.
 Install Ruby 2.1 and Bundler with your method of choice (RVM, ruby-build, rbenv, chruby, etc.).
 
 ```
-brew install redis postgresql phantomjs
+brew tap homebrew/dupes
+brew install redis postgresql phantomjs libiconv icu4c
+bundle config build.nokogiri --with-iconv-dir=/usr/local/opt/libiconv
 ```
 
 #### Debian
