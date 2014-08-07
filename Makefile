@@ -26,10 +26,9 @@ gitlab/config/resque.yml:
 	sed "s|/home/git|${gitlab_development_root}|" redis/resque.yml.example > $@
 
 gitlab/.bundle:
-	cd gitlab && bundle install --without mysql --path .bundle
+	cd ${gitlab_development_root}/gitlab && bundle install --without mysql production --jobs 4
 
 # Set up gitlab-shell
-
 gitlab-shell-setup: gitlab-shell/.git gitlab-shell/config.yml gitlab-shell/.bundle
 
 gitlab-shell/.git:
@@ -39,7 +38,7 @@ gitlab-shell/config.yml:
 	sed "s|/home/git|${gitlab_development_root}|" gitlab-shell/config.yml.example > gitlab-shell/config.yml
 
 gitlab-shell/.bundle:
-	cd gitlab-shell && bundle install --path .bundle
+	cd ${gitlab_development_root}/gitlab-shell && bundle install --without production --jobs 4
 
 # Set up supporting services
 
@@ -59,4 +58,4 @@ postgresql/data/PG_VERSION:
 	initdb -E utf-8 postgresql/data
 
 .bundle:
-	bundle install --path .bundle
+	bundle install --jobs 4
