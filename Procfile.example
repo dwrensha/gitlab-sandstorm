@@ -1,0 +1,2 @@
+redis: redis-server /home/git/redis/redis.conf
+postgresql: postgres -D /home/git/postgresql/data -k /home/git/postgresql -h ''

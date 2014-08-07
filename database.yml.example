@@ -1,0 +1,13 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: gitlabhq_development
+  pool: 5
+  host: /home/git/postgresql
+
+test: &test
+  adapter: postgresql
+  encoding: unicode
+  database: gitlabhq_test
+  pool: 5
+  host: /home/git/postgresql

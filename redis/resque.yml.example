@@ -1,0 +1,2 @@
+development: unix:/home/git/redis/redis.socket
+test: unix:/home/git/redis/redis.socket

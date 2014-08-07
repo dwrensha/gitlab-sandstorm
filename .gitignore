@@ -3,3 +3,7 @@ gitlab-shell/
 gitlab-satellites/
 repositories/
 gitlab/
+Procfile
+postgresql/data
+postgresql/.s.*
+redis/*.conf

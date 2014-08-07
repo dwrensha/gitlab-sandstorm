@@ -1,0 +1,2 @@
+port 0
+unixsocket /home/git/redis/redis.socket
