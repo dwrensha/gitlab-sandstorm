@@ -4,7 +4,11 @@ Run a GitLab development environment isolated in a directory.
 
 This project uses Foreman to run dedicated Postgres and Redis processes for
 GitLab development. All data is stored inside the gitlab-development-kit
-directory.
+directory. All connections to supporting services go through Unix domain
+sockets to avoid port conflicts.
+
+Note: at this time Redis still uses port 6379 because that is hard-wired into
+the GitLab development and test environments.
 
 ## Design goals
 
