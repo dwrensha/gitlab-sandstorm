@@ -43,6 +43,20 @@ gitlab-shell/.bundle:
 # Set up supporting services
 
 support-setup: Procfile redis postgresql .bundle
+	@echo ""
+	@echo "*********************************************"
+	@echo "************** Setup finished! **************"
+	@echo "*********************************************"
+	@echo "Post install instructions:"
+	@echo "start Redis & Postgresql by running he command below, and keep it running"
+	@echo "> 'bundle exec foreman start'"
+	@echo ""
+	@echo "Seed the main GitLab database"
+	@echo "> 'cd gitlab && bundle exec rake gitlab:setup'"
+	@echo ""
+	@echo "Finally, start the main GitLab rails application"
+	@echo "> 'bundle exec foreman start'"
+	@echo "***********************************"
 
 Procfile:
 	sed "s|/home/git|${gitlab_development_root}|g" $@.example > $@
