@@ -6,6 +6,13 @@ This project uses Foreman to run dedicated Postgres and Redis processes for
 GitLab development. All data is stored inside the gitlab-development-kit
 directory.
 
+## Design goals
+
+- Get the user started, do not try to take care of everything
+- Run everything as your 'desktop' user on your development machine
+- GitLab Development Kit itself does not run `sudo` commands
+- It is OK to leave some things to the user (e.g. installing Ruby)
+
 ## Installation
 
 ### Requirements
