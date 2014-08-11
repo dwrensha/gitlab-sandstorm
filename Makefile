@@ -53,7 +53,7 @@ support-setup: Procfile redis postgresql .bundle
 	@echo "> 'bundle exec foreman start'"
 	@echo ""
 	@echo "Seed the main GitLab database"
-	@echo "> 'cd gitlab && bundle exec rake gitlab:setup'"
+	@echo "> 'cd gitlab && bundle exec rake db:create gitlab:setup'"
 	@echo ""
 	@echo "Finally, start the main GitLab rails application"
 	@echo "> 'bundle exec foreman start'"
