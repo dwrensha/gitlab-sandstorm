@@ -20,7 +20,7 @@ gitlab/config/database.yml:
 	sed "s|/home/git|${gitlab_development_root}|" database.yml.example > gitlab/config/database.yml
 
 gitlab/config/unicorn.rb:
-	cp gitlab/config/unicorn.rb{.example.development,}
+	cp gitlab/config/unicorn.rb.example.development gitlab/config/unicorn.rb
 
 gitlab/config/resque.yml:
 	sed "s|/home/git|${gitlab_development_root}|" redis/resque.yml.example > $@
