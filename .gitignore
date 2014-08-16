@@ -7,3 +7,4 @@ Procfile
 postgresql/data
 postgresql/.s.*
 redis/*.conf
+.bundle/
