@@ -1,6 +1,7 @@
 gitlab_repo = https://gitlab.com/gitlab-org/gitlab-ce.git
 gitlab_shell_repo = https://gitlab.com/gitlab-org/gitlab-shell.git
 gitlab_development_root = $(shell pwd)
+postgres_bin_dir = $(shell pg_config --bindir)
 
 all: gitlab-setup gitlab-shell-setup support-setup
 
@@ -60,7 +61,7 @@ support-setup: Procfile redis postgresql .bundle
 	@echo "***********************************"
 
 Procfile:
-	sed "s|/home/git|${gitlab_development_root}|g" $@.example > $@
+	sed "s|/home/git|${gitlab_development_root}|g;s|postgres |${postgres_bin_dir}/postgres |" $@.example > $@
 
 redis: redis/redis.conf
 
@@ -70,7 +71,7 @@ redis/redis.conf:
 postgresql: postgresql/data/PG_VERSION
 
 postgresql/data/PG_VERSION:
-	initdb -E utf-8 postgresql/data
+	${postgres_bin_dir}/initdb -E utf-8 postgresql/data
 
 .bundle:
 	bundle install --jobs 4
