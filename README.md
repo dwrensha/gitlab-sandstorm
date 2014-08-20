@@ -21,14 +21,20 @@ the GitLab development and test environments.
 
 ### Requirements
 
-#### OS X 10.9
-
 Install Ruby 2.1 and Bundler with your method of choice (RVM, ruby-build, rbenv, chruby, etc.).
+
+#### OS X 10.9
 
 ```
 brew tap homebrew/dupes
 brew install redis postgresql phantomjs libiconv icu4c
 bundle config build.nokogiri --with-iconv-dir=/usr/local/opt/libiconv
+```
+
+#### Ubuntu
+
+```
+sudo apt-get install postgresql libpq-dev phantomjs redis-server libicu-dev cmake
 ```
 
 #### Debian
