@@ -19,9 +19,11 @@ the GitLab development and test environments.
 
 ## Installation
 
-### Requirements
+### Pre-installation
 
-Install Ruby 2.1 and Bundler with your method of choice (RVM, ruby-build, rbenv, chruby, etc.).
+Ensure you have installed Ruby 2.1 and Bundler with your method of choice (RVM, ruby-build, rbenv, chruby, etc.).
+
+### Install dependencies
 
 #### OS X 10.9
 
@@ -45,7 +47,7 @@ TODO
 
 TODO
 
-### Repositories and gems
+### Install the repositories and gems
 
 The Makefile will clone the repositories, install the Gem bundles and set up
 basic configuration files.
@@ -55,7 +57,7 @@ basic configuration files.
 make
 ```
 
-Alternatively, you can clone straight from your forked repositories.
+Alternatively, you can clone straight from your forked repositories or GitLab EE.
 
 ```
 # Clone your own forked repositories
