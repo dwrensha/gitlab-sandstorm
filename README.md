@@ -103,4 +103,4 @@ Now you can go to http://localhost:3000 in your browser.
 
 - Check if foreman is running in the gitlab-development-kit directory.
 - Check for custom Postgres connection settings defined via the environment; we
-  assume none such variables are set. Look for them with `set | grep '^PG_'`.
+  assume none such variables are set. Look for them with `set | grep '^PG'`.
