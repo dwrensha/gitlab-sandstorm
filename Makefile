@@ -15,7 +15,9 @@ gitlab/.git:
 gitlab-config: gitlab/config/gitlab.yml gitlab/config/database.yml gitlab/config/unicorn.rb gitlab/config/resque.yml
 
 gitlab/config/gitlab.yml:
-	sed "s|/home/git|${gitlab_development_root}|;s|# user: git|user: $(shell whoami)|" gitlab/config/gitlab.yml.example > gitlab/config/gitlab.yml
+	sed -e "s|/home/git|${gitlab_development_root}|"\
+	 -e "s|# user: git|user: $(shell whoami)|"\
+	 gitlab/config/gitlab.yml.example > gitlab/config/gitlab.yml
 
 gitlab/config/database.yml:
 	sed "s|/home/git|${gitlab_development_root}|" database.yml.example > gitlab/config/database.yml
@@ -37,7 +39,10 @@ gitlab-shell/.git:
 	git clone ${gitlab_shell_repo} gitlab-shell
 
 gitlab-shell/config.yml:
-	sed "s|/home/git|${gitlab_development_root}|;s|:8080/|:3000|;s|/usr/bin/redis-cli|$(shell which redis-cli)|" gitlab-shell/config.yml.example > gitlab-shell/config.yml
+	sed -e "s|/home/git|${gitlab_development_root}|"\
+	  -e "s|:8080/|:3000|"\
+	  -e "s|/usr/bin/redis-cli|$(shell which redis-cli)|"\
+	  gitlab-shell/config.yml.example > gitlab-shell/config.yml
 
 gitlab-shell/.bundle:
 	cd ${gitlab_development_root}/gitlab-shell && bundle install --without production --jobs 4
@@ -61,7 +66,9 @@ support-setup: Procfile redis postgresql .bundle
 	@echo "***********************************"
 
 Procfile:
-	sed "s|/home/git|${gitlab_development_root}|g;s|postgres |${postgres_bin_dir}/postgres |" $@.example > $@
+	sed -e "s|/home/git|${gitlab_development_root}|g"\
+	  -e "s|postgres |${postgres_bin_dir}/postgres |"\
+	  $@.example > $@
 
 redis: redis/redis.conf
 
