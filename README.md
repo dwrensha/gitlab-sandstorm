@@ -61,13 +61,6 @@ Alternatively, you can clone straight from your forked repositories or GitLab EE
 make gitlab_repo=git@gitlab.com:example/gitlab-ce.git gitlab_shell_repo=git@gitlab.com:example/gitlab-shell.git
 ```
 
-### Database initialization for development
-
-```
-cd gitlab
-bundle exec rake db:create gitlab:setup
-```
-
 ## Development
 
 When doing development, you will need one shell session (terminal window)
