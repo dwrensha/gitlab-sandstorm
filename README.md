@@ -94,3 +94,32 @@ Now you can go to http://localhost:3000 in your browser.
 - Check if foreman is running in the gitlab-development-kit directory.
 - Check for custom Postgres connection settings defined via the environment; we
   assume none such variables are set. Look for them with `set | grep '^PG'`.
+
+### 'LoadError: dlopen' when starting Ruby apps
+
+This can happen when you try to load a Ruby gem with native extensions that
+were linked against a system library that is no longer there. A typical culprit
+is Homebrew on OS X, which encourages frequent updates (`brew update && brew
+upgrade`) which may break binary compatibility.
+
+```
+bundle exec rake db:create gitlab:setup
+rake aborted!
+LoadError: dlopen(/Users/janedoe/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-darwin-13/2.1.0-static/charlock_holmes-0.6.9.4/charlock_holmes/charlock_holmes.bundle, 9): Library not loaded: /usr/local/opt/icu4c/lib/libicui18n.52.1.dylib
+  Referenced from: /Users/janedoe/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-darwin-13/2.1.0-static/charlock_holmes-0.6.9.4/charlock_holmes/charlock_holmes.bundle
+  Reason: image not found - /Users/janedoe/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/extensions/x86_64-darwin-13/2.1.0-static/charlock_holmes-0.6.9.4/charlock_holmes/charlock_holmes.bundle
+/Users/janedoe/gitlab-development-kit/gitlab/config/application.rb:6:in `<top (required)>'
+/Users/janedoe/gitlab-development-kit/gitlab/Rakefile:5:in `require'
+/Users/janedoe/gitlab-development-kit/gitlab/Rakefile:5:in `<top (required)>'
+(See full trace by running task with --trace)
+```
+
+In the above example, you see that the charlock_holmes gem fails to load
+`libicui18n.52.1.dylib`. You can try fixing this by re-installing
+charlock_holmes:
+
+```
+# in /Users/janedoe/gitlab-development-kit
+gem uninstall charlock_holmes
+bundle install # should reinstall charlock_holmes
+```
