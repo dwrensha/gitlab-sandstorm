@@ -61,6 +61,23 @@ Alternatively, you can clone straight from your forked repositories or GitLab EE
 make gitlab_repo=git@gitlab.com:example/gitlab-ce.git gitlab_shell_repo=git@gitlab.com:example/gitlab-shell.git
 ```
 
+### Post-installation
+
+You can start Redis & Postgresql by running the command below, and keeping it
+running.
+
+   bundle exec foreman start
+
+To seed the main GitLab database:
+
+   cd gitlab && bundle exec rake db:create dev:setup
+
+Finally, you can start the main GitLab rails application with:
+
+   bundle exec foreman start
+
+END Post-installation
+
 ## Development
 
 When doing development, you will need one shell session (terminal window)
