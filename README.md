@@ -63,16 +63,15 @@ make gitlab_repo=git@gitlab.com:example/gitlab-ce.git gitlab_shell_repo=git@gitl
 
 ### Post-installation
 
-You can start Redis & Postgresql by running the command below, and keeping it
-running.
+Start Redis and PostgreSQL by running the command below.
 
     bundle exec foreman start
 
-To seed the main GitLab database:
+Seed the main GitLab database:
 
     cd gitlab && bundle exec rake db:create dev:setup
 
-Finally, you can start the main GitLab rails application with:
+Finally, start the main GitLab rails application:
 
     bundle exec foreman start
 
