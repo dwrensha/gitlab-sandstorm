@@ -44,6 +44,13 @@ TODO
 
 TODO
 
+### Clone GitLab Development Kit repository
+
+```
+git clone https://gitlab.com/gitlab-org/gitlab-development-kit.git
+cd gitlab-development-kit
+```
+
 ### Install the repositories and gems
 
 The Makefile will clone the repositories, install the Gem bundles and set up
