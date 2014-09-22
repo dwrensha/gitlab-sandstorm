@@ -26,7 +26,7 @@ Ensure you have installed Ruby 2.1 and Bundler with your method of choice (RVM, 
 
 ```
 brew tap homebrew/dupes
-brew install redis postgresql phantomjs libiconv icu4c
+brew install redis postgresql phantomjs libiconv icu4c pkg-config cmake
 bundle config build.nokogiri --with-iconv-dir=/usr/local/opt/libiconv
 ```
 
