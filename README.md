@@ -36,6 +36,12 @@ bundle config build.nokogiri --with-iconv-dir=/usr/local/opt/libiconv
 sudo apt-get install postgresql libpq-dev phantomjs redis-server libicu-dev cmake
 ```
 
+#### Arch Linux
+
+```
+sudo pacman -S postgresql phantomjs redis postgresql-libs icu
+```
+
 #### Debian
 
 TODO
