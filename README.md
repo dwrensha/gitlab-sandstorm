@@ -44,11 +44,11 @@ sudo pacman -S postgresql phantomjs redis postgresql-libs icu
 
 #### Debian
 
-TODO
+Please contribute this by sending a merge request.
 
 #### RedHat
 
-TODO
+Please contribute this by sending a merge request.
 
 ### Clone GitLab Development Kit repository
 
