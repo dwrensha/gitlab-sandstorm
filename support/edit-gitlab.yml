@@ -1,0 +1,11 @@
+#!/bin/sh
+# This script will edit the file named as the first argument in-place.
+ed -s "$1" <<EOF
+/port:/c
+    port: 3000
+.
+/ user:/c
+    user: $(whoami)
+.
+wq
+EOF

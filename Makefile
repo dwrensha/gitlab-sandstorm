@@ -16,8 +16,8 @@ gitlab-config: gitlab/config/gitlab.yml gitlab/config/database.yml gitlab/config
 
 gitlab/config/gitlab.yml:
 	sed -e "s|/home/git|${gitlab_development_root}|"\
-	 -e "s|# user: git|user: $(shell whoami)|"\
 	 gitlab/config/gitlab.yml.example > gitlab/config/gitlab.yml
+	support/edit-gitlab.yml gitlab/config/gitlab.yml
 
 gitlab/config/database.yml:
 	sed "s|/home/git|${gitlab_development_root}|" database.yml.example > gitlab/config/database.yml
