@@ -42,7 +42,7 @@ gitlab-shell/config.yml:
 	sed -e "s|/home/git|${gitlab_development_root}|"\
 	  -e "s|:8080/|:3000|"\
 	  -e "s|/usr/bin/redis-cli|$(shell which redis-cli)|"\
-	  -e "s|^  # socket: .*|  socket: ${gitlab_development_root}/redis/redis.socket|"\
+	  -e "s|^  socket: .*|  socket: ${gitlab_development_root}/redis/redis.socket|"\
 	  gitlab-shell/config.yml.example > gitlab-shell/config.yml
 
 gitlab-shell/.bundle:
