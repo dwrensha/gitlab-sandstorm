@@ -28,4 +28,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.provider "lxc" do |v, override|
 		override.vm.box = "fgrehm/trusty64-lxc"
 	end
+	config.vm.provider "virtualbox" do |vb|
+		vb.customize ["modifyvm", :id, "--memory", "2048"]
+	end
 end
