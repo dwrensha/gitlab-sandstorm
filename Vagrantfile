@@ -25,6 +25,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.provision "shell", inline: $apt_reqs
 	config.vm.provision "shell", inline: $user_setup
 
+	config.vm.network "forwarded_port", guest: 3000, host: 3000
+
 	config.vm.provider "lxc" do |v, override|
 		override.vm.box = "fgrehm/trusty64-lxc"
 	end
