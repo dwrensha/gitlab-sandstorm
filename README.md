@@ -33,7 +33,7 @@ bundle config build.nokogiri --with-iconv-dir=/usr/local/opt/libiconv
 #### Ubuntu
 
 ```
-sudo apt-get install postgresql libpq-dev phantomjs redis-server libicu-dev cmake
+sudo apt-get install postgresql libpq-dev phantomjs redis-server libicu-dev cmake g++
 ```
 
 #### Arch Linux
