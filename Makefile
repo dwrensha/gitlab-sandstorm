@@ -31,6 +31,9 @@ gitlab/config/resque.yml:
 gitlab/.bundle:
 	cd ${gitlab_development_root}/gitlab && bundle install --without mysql production --jobs 4
 
+gitlab/db_migrate:
+	cd ${gitlab_development_root}/gitlab && bundle exec rake db:migrate
+
 # Set up gitlab-shell
 
 gitlab-shell-setup: gitlab-shell/.git gitlab-shell/config.yml gitlab-shell/.bundle
@@ -47,6 +50,19 @@ gitlab-shell/config.yml:
 
 gitlab-shell/.bundle:
 	cd ${gitlab_development_root}/gitlab-shell && bundle install --without production --jobs 4
+
+# Update gitlab and gitlab-shell
+
+update: gitlab-update gitlab-shell-update
+
+gitlab-update: gitlab/.git/pull gitlab/.bundle gitlab/db_migrate
+gitlab-shell-update: gitlab-shell/.git/pull gitlab-shell/.bundle
+
+gitlab/.git/pull:
+	cd ${gitlab_development_root}/gitlab && git pull
+
+gitlab-shell/.git/pull:
+	cd ${gitlab_development_root}/gitlab-shell && git pull
 
 # Set up supporting services
 
