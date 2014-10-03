@@ -11,7 +11,7 @@ EOT
 # CentOS 6 kernel doesn't suppose UID mapping (affects vagrant-lxc mostly).
 $user_setup = <<EOT
 if [ $(id -u vagrant) != $(stat -c %u /vagrant) ]; then
-	useradd -u $(stat -c %u /vagrant) --home-dir /vagrant build
+	useradd -u $(stat -c %u /vagrant) -m build
 	echo "build ALL=(ALL) NOPASSWD:ALL" | tee /etc/sudoers.d/build
 	DEV_USER=build
 else
