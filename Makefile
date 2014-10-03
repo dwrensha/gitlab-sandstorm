@@ -59,10 +59,10 @@ gitlab-update: gitlab/.git/pull gitlab/.bundle gitlab/db_migrate
 gitlab-shell-update: gitlab-shell/.git/pull gitlab-shell/.bundle
 
 gitlab/.git/pull:
-	cd ${gitlab_development_root}/gitlab && git pull
+	cd ${gitlab_development_root}/gitlab && git pull --ff-only
 
 gitlab-shell/.git/pull:
-	cd ${gitlab_development_root}/gitlab-shell && git pull
+	cd ${gitlab_development_root}/gitlab-shell && git pull --ff-only
 
 # Set up supporting services
 
