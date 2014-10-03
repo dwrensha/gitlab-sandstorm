@@ -116,6 +116,22 @@ bundle exec foreman start
 
 Now you can go to http://localhost:3000 in your browser.
 
+## Update gitlab and gitlab-shell repositories
+
+When working on a new feature, always check that your `gitlab` repository is up
+to date with the upstream master branch.
+
+In order to fetch the latest code, first make sure that `foreman` is not runnning
+and then run:
+
+```
+make update
+```
+
+This will update both `gitlab` and `gitlab-shell` and run any possible migrations.
+You can also update them separately by running `make gitlab-update` and
+`make gitlab-shell-update` respectively.
+
 ## Troubleshooting
 
 ### Rails cannot connect to Postgres
