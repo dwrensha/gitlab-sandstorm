@@ -52,14 +52,14 @@ Please contribute this by sending a merge request.
 
 Please contribute this by sending a merge request.
 
-### Vagrant
+#### Vagrant
 
 [Vagrant](http://www.vagrantup.com) is a tool for setting up identical development
 environments including all dependencies. Vagrant will default to using
 [VirtualBox](http://www.virtualbox.org), but it has many plugins for different
 environments.
 
-#### Usage
+##### Usage
 
 Once you have Vagrant installed, simply type `vagrant up` in this directory. Vagrant
 will download an OS image, bring it up, and install all the prerequisites. You then
