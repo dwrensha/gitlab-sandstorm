@@ -58,7 +58,7 @@ gitlab-update: gitlab/.git/pull
 	bundle exec rake db:migrate
 
 gitlab-shell-update: gitlab-shell/.git/pull
-	cd ${gitlab_development_root}/gitlab && \
+	cd ${gitlab_development_root}/gitlab-shell && \
 	bundle install --without production --jobs 4
 
 gitlab/.git/pull:
