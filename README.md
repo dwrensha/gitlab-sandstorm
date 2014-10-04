@@ -121,8 +121,8 @@ Now you can go to http://localhost:3000 in your browser.
 When working on a new feature, always check that your `gitlab` repository is up
 to date with the upstream master branch.
 
-In order to fetch the latest code, first make sure that `foreman` is not runnning
-and then run:
+In order to fetch the latest code, first make sure that `foreman` for
+postgres is runnning (needed for db migration) and then run:
 
 ```
 make update
