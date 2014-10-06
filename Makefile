@@ -48,6 +48,25 @@ gitlab-shell/config.yml:
 gitlab-shell/.bundle:
 	cd ${gitlab_development_root}/gitlab-shell && bundle install --without production --jobs 4
 
+# Update gitlab and gitlab-shell
+
+update: gitlab-update gitlab-shell-update
+
+gitlab-update: gitlab/.git/pull
+	cd ${gitlab_development_root}/gitlab && \
+	bundle install --without mysql production --jobs 4 && \
+	bundle exec rake db:migrate
+
+gitlab-shell-update: gitlab-shell/.git/pull
+	cd ${gitlab_development_root}/gitlab-shell && \
+	bundle install --without production --jobs 4
+
+gitlab/.git/pull:
+	cd ${gitlab_development_root}/gitlab && git pull --ff-only
+
+gitlab-shell/.git/pull:
+	cd ${gitlab_development_root}/gitlab-shell && git pull --ff-only
+
 # Set up supporting services
 
 support-setup: Procfile redis postgresql .bundle
