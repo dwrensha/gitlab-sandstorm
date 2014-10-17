@@ -1,0 +1,36 @@
+dn: cn=config
+objectClass: olcGlobal
+cn: config
+
+dn: olcDatabase={0}config,cn=config
+objectClass: olcDatabaseConfig
+olcDatabase: {0}config
+olcRootDN: cn=admin,cn=config
+# hash for 'password'
+olcRootPW: {SSHA}A5StgE99fCDUo7AlWas7Nvlyexo0vQfm
+
+# based on https://help.ubuntu.com/10.04/serverguide/openldap-server.html
+dn: olcDatabase=ldif,cn=config
+objectClass: olcDatabaseConfig
+objectClass: olcLdifConfig
+olcDatabase: ldif
+olcSuffix: dc=example,dc=com
+olcDbDirectory: slapd.d
+olcRootDN: cn=admin,dc=example,dc=com
+olcRootPW: password
+olcLastMod: TRUE
+olcAccess: to dn.base="" by * read
+olcAccess: to * by dn="cn=admin,dc=example,dc=com" write by * read
+
+# based on https://help.ubuntu.com/10.04/serverguide/openldap-server.html
+dn: olcDatabase=ldif,cn=config
+objectClass: olcDatabaseConfig
+objectClass: olcLdifConfig
+olcDatabase: ldif
+olcSuffix: dc=example-alt,dc=com
+olcDbDirectory: slapd.d
+olcRootDN: cn=admin,dc=example-alt,dc=com
+olcRootPW: password
+olcLastMod: TRUE
+olcAccess: to dn.base="" by * read
+olcAccess: to * by dn="cn=admin,dc=example,dc=com" write by * read
