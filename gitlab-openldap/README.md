@@ -4,6 +4,11 @@ This is an attempt to set up an OpenLDAP server for GitLab development.
 
 ## Getting it running
 
+On OS X, first run `brew install openldap`.
+
+There are issues with the syntax in `bootstrap.ldif` and slapadd 2.4.28, see
+https://gitlab.com/gitlab-org/gitlab-development-kit/issues/17 .
+
 ```bash
 make # bootstrap LDAP server to run out of slapd.d
 ./run-slapd # stays attached in the current terminal
