@@ -90,6 +90,10 @@ Finally, start the main GitLab rails application:
 
 To enable the OpenLDAP server, see the OpenLDAP instructions in this readme.
 
+END Post-installation
+# The above line is needed for automatic processing.
+# Text above it is printed in the console after users set up the development kit.
+
 ## Development
 
 When doing development, you will need one shell session (terminal window)
