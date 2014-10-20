@@ -74,11 +74,6 @@ Alternatively, you can clone straight from your forked repositories or GitLab EE
 make gitlab_repo=git@gitlab.com:example/gitlab-ce.git gitlab_shell_repo=git@gitlab.com:example/gitlab-shell.git
 ```
 
-<!---
-The text below between '### Post-installation' and 'END Post-installation' is
-printed in the console after `make` completes.
---->
-
 ### Post-installation
 
 Start Redis and PostgreSQL by running the command below.
@@ -97,7 +92,8 @@ To enable the openLDAP server, see the instructions in the README
 
 END Post-installation
 
-<!--- Please do not delete the 'END Post-installation' line above. --->
+Please do not delete the 'END Post-installation' line above. It is used to
+print the post-installation message from the Makefile.
 
 ## Development
 
