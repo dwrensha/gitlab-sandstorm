@@ -1,3 +1,5 @@
+gitlab_openldap_root = $(shell pwd)
+
 default: slapd.d/bootstrap contents alt_contents
 
 contents: slapd.d/schema slapd.d/example-com
@@ -7,24 +9,32 @@ slapd.d:
 	mkdir slapd.d
 	chmod 700 slapd.d
 
-slapd.d/bootstrap: slapd.d
-	slapadd -n 0 -F slapd.d < bootstrap.ldif
+slapd.d/bootstrap: sbin/slapadd slapd.d
+	sbin/slapadd -n 0 -F slapd.d < bootstrap.ldif
 	touch $@
 
-slapd.d/schema:
-	curl 'http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob_plain;f=servers/slapd/schema/core.ldif;hb=HEAD' | slapadd -b 'cn=config' -F slapd.d
-	curl 'http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob_plain;f=servers/slapd/schema/cosine.ldif;hb=HEAD' | slapadd -b 'cn=config' -F slapd.d
-	curl 'http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob_plain;f=servers/slapd/schema/inetorgperson.ldif;hb=HEAD' | slapadd -b 'cn=config' -F slapd.d
-	curl 'http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob_plain;f=servers/slapd/schema/nis.ldif;hb=HEAD' | slapadd -b 'cn=config' -F slapd.d
+slapd.d/schema: sbin/slapadd
+	sbin/slapadd -b 'cn=config' -F slapd.d < etc/openldap/schema/core.ldif
+	sbin/slapadd -b 'cn=config' -F slapd.d < etc/openldap/schema/cosine.ldif
+	sbin/slapadd -b 'cn=config' -F slapd.d < etc/openldap/schema/inetorgperson.ldif
+	sbin/slapadd -b 'cn=config' -F slapd.d < etc/openldap/schema/nis.ldif
 	touch $@
 
-slapd.d/example-com:
-	slapadd -b 'dc=example,dc=com' -F slapd.d < frontend.example.com.ldif
+slapd.d/example-com: sbin/slapadd
+	sbin/slapadd -b 'dc=example,dc=com' -F slapd.d < frontend.example.com.ldif
 	touch $@
 
-slapd.d/alt-example-com:
-	slapadd -b 'dc=example-alt,dc=com' -F slapd.d < frontend.alt.example.com.ldif
+slapd.d/alt-example-com: sbin/slapadd
+	sbin/slapadd -b 'dc=example-alt,dc=com' -F slapd.d < frontend.alt.example.com.ldif
 	touch $@
 
 clean:
 	rm -rf slapd.d
+
+openldap-2.4.40:
+	curl -O ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/openldap-2.4.40.tgz
+	tar zxf openldap-2.4.40.tgz
+
+sbin/slapadd: openldap-2.4.40
+	cd openldap-2.4.40 && ./configure --prefix=${gitlab_openldap_root} --enable-bdb=no --enable-hdb=no
+	cd openldap-2.4.40 && make -j 2 install

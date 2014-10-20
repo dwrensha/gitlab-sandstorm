@@ -8,3 +8,12 @@ postgresql/data
 postgresql/.s.*
 redis/*.conf
 .bundle/
+gitlab-openldap/bin/
+gitlab-openldap/etc/
+gitlab-openldap/include/
+gitlab-openldap/lib/
+gitlab-openldap/libexec/
+gitlab-openldap/openldap-2.4.40.tgz
+gitlab-openldap/openldap-2.4.40/
+gitlab-openldap/sbin/
+gitlab-openldap/share/
