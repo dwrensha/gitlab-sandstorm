@@ -2,12 +2,6 @@
 
 This is an attempt to set up an OpenLDAP server for GitLab development.
 
-- Goal is to be able to run as the 'desktop' user from a Procfile, in the style of https://gitlab.com/gitlab-org/gitlab-development-kit
-- Use sockets for connections if possible, but not if this is not supported by omniauth-ldap
-- Passwords in ldifs need to be hashed with `slappasswd` apparently
-- After bootstrapping with `slapadd` and `bootstrap.ldif`, LDIF imports can be run as `cn=admin,cn=config` with password `password`.
-- Maybe a good idea, maybe not: we currently use the 'ldif' storage backend so you can inspect the database with `find` etc.
-
 ## Getting it running
 
 ```bash
