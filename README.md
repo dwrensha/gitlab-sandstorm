@@ -91,8 +91,6 @@ Finally, start the main GitLab rails application:
 To enable the OpenLDAP server, see the OpenLDAP instructions in this readme.
 
 END Post-installation
-# The above line is needed for automaticcally determining the post-installation text.
-# This text is printed in the console after users set up the development kit.
 
 ## Development
 
