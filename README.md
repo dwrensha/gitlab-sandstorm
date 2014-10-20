@@ -88,9 +88,7 @@ Finally, start the main GitLab rails application:
 
     bundle exec foreman start
 
-To enable the openLDAP server, see the instructions in the README
-
-END Post-installation
+To enable the OpenLDAP server, see the OpenLDAP instructions in this readme.
 
 ## Development
 
@@ -134,12 +132,12 @@ This will update both `gitlab` and `gitlab-shell` and run any possible migration
 You can also update them separately by running `make gitlab-update` and
 `make gitlab-shell-update` respectively.
 
-## Openldap
+## OpenLDAP
 
-To run the openldap installation included in the GitLab development kit do the following:
+To run the OpenLDAP installation included in the GitLab development kit do the following:
 
 ```
-vim Procfile # remove the comment before the openldap line
+vim Procfile # remove the comment on the OpenLDAP line
 cd gitlab-openldap
 make # will setup the databases
 ```
