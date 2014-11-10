@@ -16,7 +16,10 @@ sockets to avoid port conflicts.
 
 ## Installation
 
-You can either use vagrant (see further down) or manually install the prerequisites.
+The preferred way to use GitLab Development Kit is to install Ruby and
+dependencies on your 'native' OS. If you want to use
+[Vagrant](https://www.vagrantup.com/) instead please see [the instructions for
+our (experimental) Vagrantfile](#vagrant).
 
 ### Pre-installation
 
@@ -51,28 +54,6 @@ Please contribute this by sending a merge request.
 #### RedHat
 
 Please contribute this by sending a merge request.
-
-#### Vagrant
-
-[Vagrant](http://www.vagrantup.com) is a tool for setting up identical development
-environments including all dependencies. Vagrant will default to using
-[VirtualBox](http://www.virtualbox.org), but it has many plugins for different
-environments.
-
-##### Usage
-
-Once you have Vagrant installed, simply type `vagrant up` in this directory. Vagrant
-will download an OS image, bring it up, and install all the prerequisites. You then
-type `vagrant ssh` to ssh into the box. This directory will be available as a shared
-folder in `/vagrant/` and you can continue at *Install the repositories and gems*
-below.
-
-Typically you keep editing on the host machine but run `make`, `bundle exec` etc.
-inside the `vagrant ssh` session.
-
-Note: On some setups the shared folder will have the wrong user. This is detected
-by the Vagrantfile and you should `sudo su - build` to switch to the correct user
-in that case.
 
 ### Clone GitLab Development Kit repository
 
@@ -118,6 +99,26 @@ END Post-installation
 
 Please do not delete the 'END Post-installation' line above. It is used to
 print the post-installation message from the Makefile.
+
+### Vagrant
+
+[Vagrant](http://www.vagrantup.com) is a tool for setting up identical development
+environments including all dependencies. Vagrant will default to using
+[VirtualBox](http://www.virtualbox.org), but it has many plugins for different
+environments.
+
+Once you have Vagrant installed, simply type `vagrant up` in this directory. Vagrant
+will download an OS image, bring it up, and install all the prerequisites. You then
+type `vagrant ssh` to ssh into the box. This directory will be available as a shared
+folder in `/vagrant/` and you can continue at *Install the repositories and gems*
+below.
+
+Typically you keep editing on the host machine but run `make`, `bundle exec` etc.
+inside the `vagrant ssh` session.
+
+Note: On some setups the shared folder will have the wrong user. This is detected
+by the Vagrantfile and you should `sudo su - build` to switch to the correct user
+in that case.
 
 ## Development
 
