@@ -1,6 +1,12 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+# We recommend developing GitLab on metal if you can.
+# Vagrant can be very slow since the NFS server is on the host OS.
+# And GitLab (testing) accesses a lot of files.
+# You can improve the speed by running NFS on the guest OS.
+# In this case you should take care to not lose the files.
+
 VAGRANTFILE_API_VERSION = "2"
 
 $apt_reqs = <<EOT
