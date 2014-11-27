@@ -1,6 +1,9 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+# Please see the Vagrant section in the readme for caveats and tips
+# https://gitlab.com/gitlab-org/gitlab-development-kit/tree/master#vagrant
+
 VAGRANTFILE_API_VERSION = "2"
 
 $apt_reqs = <<EOT

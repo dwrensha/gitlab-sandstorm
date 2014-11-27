@@ -107,6 +107,13 @@ environments including all dependencies. Vagrant will default to using
 [VirtualBox](http://www.virtualbox.org), but it has many plugins for different
 environments.
 
+Vagrant allows you to develop GitLab without affecting your host machine.
+But we recommend developing GitLab on metal if you can.
+Vagrant can be very slow since the NFS server is on the host OS.
+And GitLab (testing) accesses a lot of files.
+You can improve the speed by running NFS on the guest OS.
+In this case you should take care to not lose the files when you shut down the VM.
+
 Once you have Vagrant installed, simply type `vagrant up` in this directory. Vagrant
 will download an OS image, bring it up, and install all the prerequisites. You then
 type `vagrant ssh` to ssh into the box. This directory will be available as a shared
