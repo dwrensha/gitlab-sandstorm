@@ -153,6 +153,17 @@ bundle exec foreman start
 
 Now you can go to http://localhost:3000 in your browser.
 
+### Running the tests
+
+In order to run the test you can use the following commands:
+- `rake spinach` to run the spinach suite
+- `rake spec` to run the rspec suite
+- `rake jasmine:ci` to run the jasmine test suite
+- `rake gitlab:test` to run all the tests
+
+Note: You can't run `rspec .` since this will try to run all the `_spec.rb`
+files it can find, also the ones in `/tmp`
+
 ## Update gitlab and gitlab-shell repositories
 
 When working on a new feature, always check that your `gitlab` repository is up
