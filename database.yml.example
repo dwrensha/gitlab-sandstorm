@@ -1,13 +1,17 @@
-development:
-  adapter: postgresql
-  encoding: unicode
-  database: gitlabhq_development
+production:
+  adapter: sqlite3
+  database: /var/sqlite3/db.sqlite3
   pool: 5
-  host: /home/git/postgresql
+  timeout: 5000
 
-test: &test
-  adapter: postgresql
-  encoding: unicode
-  database: gitlabhq_test
+#
+# Development specific
+#
+development:
+  adapter: sqlite3
+  database: /var/sqlite3/db.sqlite3
   pool: 5
-  host: /home/git/postgresql
+  timeout: 5000
+
+
+

@@ -1,6 +1,6 @@
 gitlab_repo = https://gitlab.com/gitlab-org/gitlab-ce.git
 gitlab_shell_repo = https://gitlab.com/gitlab-org/gitlab-shell.git
-gitlab_development_root = $(shell pwd)
+gitlab_development_root=
 postgres_bin_dir = $(shell pg_config --bindir)
 
 all: gitlab-setup gitlab-shell-setup support-setup
@@ -29,7 +29,7 @@ gitlab/config/resque.yml:
 	sed "s|/home/git|${gitlab_development_root}|" redis/resque.yml.example > $@
 
 gitlab/.bundle:
-	cd ${gitlab_development_root}/gitlab && bundle install --without mysql production --jobs 4
+	cd gitlab && bundle install --without mysql production --jobs 4
 
 # Set up gitlab-shell
 
@@ -46,26 +46,26 @@ gitlab-shell/config.yml:
 	  gitlab-shell/config.yml.example > gitlab-shell/config.yml
 
 gitlab-shell/.bundle:
-	cd ${gitlab_development_root}/gitlab-shell && bundle install --without production --jobs 4
+	cd gitlab-shell && bundle install --without production --jobs 4
 
 # Update gitlab and gitlab-shell
 
 update: gitlab-update gitlab-shell-update
 
 gitlab-update: gitlab/.git/pull
-	cd ${gitlab_development_root}/gitlab && \
+	cd gitlab && \
 	bundle install --without mysql production --jobs 4 && \
 	bundle exec rake db:migrate
 
 gitlab-shell-update: gitlab-shell/.git/pull
-	cd ${gitlab_development_root}/gitlab-shell && \
+	cd gitlab-shell && \
 	bundle install --without production --jobs 4
 
 gitlab/.git/pull:
-	cd ${gitlab_development_root}/gitlab && git pull --ff-only
+	cd gitlab && git pull --ff-only
 
 gitlab-shell/.git/pull:
-	cd ${gitlab_development_root}/gitlab-shell && git pull --ff-only
+	cd gitlab-shell && git pull --ff-only
 
 # Set up supporting services
 
