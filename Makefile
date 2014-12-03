@@ -1,4 +1,5 @@
-gitlab_repo = https://gitlab.com/gitlab-org/gitlab-ce.git
+gitlab_repo = https://github.com/dwrensha/gitlabhq.git
+gitlab_repo_branch = sandstorm-app
 gitlab_shell_repo = https://gitlab.com/gitlab-org/gitlab-shell.git
 gitlab_development_root=
 postgres_bin_dir = $(shell pg_config --bindir)
@@ -10,7 +11,7 @@ all: gitlab-setup gitlab-shell-setup support-setup
 gitlab-setup: gitlab/.git gitlab-config gitlab/.bundle
 
 gitlab/.git:
-	git clone ${gitlab_repo} gitlab
+	git clone ${gitlab_repo} gitlab && cd gitlab && git checkout ${gitlab_repo_branch}
 
 gitlab-config: gitlab/config/gitlab.yml gitlab/config/database.yml gitlab/config/unicorn.rb gitlab/config/resque.yml
 
