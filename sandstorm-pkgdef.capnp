@@ -34,7 +34,9 @@ const pkgdef :Spk.PackageDefinition = (
     # automatically by running it on a FUSE filesystem. So, the mappings
     # here are only to tell it where to find files that the app wants.
     searchPath = [
-      ( sourcePath = "." ),  # Search this directory first.
+      ( sourcePath = ".", # Search this directory first.
+        hidePaths = ["gitlab/.git"]
+      ),
       ( sourcePath = "/",    # Then search the system root directory.
         hidePaths = ["home", "proc", "sys", "etc/nsswitch.conf", "etc/passwd", "etc/localtime", "etc/host.conf", "etc/resolv.conf"]
       )
