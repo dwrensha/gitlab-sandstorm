@@ -1,11 +1,12 @@
-#! /bin/sh
+export RBENV_ROOT=/usr/local/share/rbenv
+export PATH="$RBENV_ROOT/bin:$PATH"
+eval "$(rbenv init -)"
 
-set -x
-
-redis-server /etc/redis.conf
+redis-server /etc/redis.conf &
 echo "started redis-server: " $?
 
-bundle exec foreman start
-echo "started foreman: " $?
+cd gitlab
 
-sleep infinity
+rails server -p 10000
+
+
