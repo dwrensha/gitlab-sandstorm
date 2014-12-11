@@ -45,7 +45,13 @@ const pkgdef :Spk.PackageDefinition = (
 
   fileList = "sandstorm-files.list",
 
-  alwaysInclude = ["gitlab/vendor", "gitlab/.gitlab_shell_secret"]
+  alwaysInclude = ["gitlab/vendor", "gitlab/.gitlab_shell_secret", "gitlab/app", "gitlab/config"],
+
+  bridgeConfig = (
+    viewInfo = (
+       permissions = [(name = "admin")]
+    )
+  )
 
 );
 
