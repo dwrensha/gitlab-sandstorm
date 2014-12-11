@@ -7,6 +7,6 @@ echo "started redis-server: " $?
 
 cd gitlab
 
-rails server -p 10000
+bundle exec rails server -p 10000 -e production
 
 

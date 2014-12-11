@@ -9,6 +9,7 @@ mkdir -p /var/git/repositories
 mkdir -p /var/redis
 mkdir -p /var/log
 
+mkdir -p /var/repositories
 
 mkdir -p /var/tmp/cache
 mkdir -p /var/tmp/miniprofiler
@@ -27,10 +28,11 @@ echo "started redis-server: " $?
 
 cd gitlab
 
-bundle exec rake db:create db:setup
+RAILS_ENV=production bundle exec rake db:create db:setup
 echo "done setting up database:" $?
 
-rails server -p 10000
+bundle exec rails server -p 10000 -e production
+
 
 #bundle exec foreman start
 #bundle exec unicorn_rails -p ${PORT:="10000"} -E ${RAILS_ENV:="development"} -c ${UNICORN_CONFIG:="config/unicorn.rb"}

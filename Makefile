@@ -13,24 +13,13 @@ gitlab-setup: gitlab/.git gitlab-config gitlab/.bundle
 gitlab/.git:
 	git clone ${gitlab_repo} gitlab && cd gitlab && git checkout ${gitlab_repo_branch}
 
-gitlab-config: gitlab/config/gitlab.yml gitlab/config/database.yml gitlab/config/unicorn.rb gitlab/config/resque.yml
-
-gitlab/config/gitlab.yml:
-	sed -e "s|/home/git|${gitlab_development_root}|"\
-	 gitlab/config/gitlab.yml.example > gitlab/config/gitlab.yml
-	support/edit-gitlab.yml gitlab/config/gitlab.yml
-
-gitlab/config/database.yml:
-	sed "s|/home/git|${gitlab_development_root}|" database.yml.example > gitlab/config/database.yml
+gitlab-config: gitlab/config/unicorn.rb
 
 gitlab/config/unicorn.rb:
 	cp gitlab/config/unicorn.rb.example.development gitlab/config/unicorn.rb
 
-gitlab/config/resque.yml:
-	sed "s|/home/git|${gitlab_development_root}|" redis/resque.yml.example > $@
-
 gitlab/.bundle:
-	cd gitlab && bundle install --without mysql production --jobs 4
+	cd gitlab && bundle install --path vendor/bundle --without test development --jobs 4
 
 # Set up gitlab-shell
 
