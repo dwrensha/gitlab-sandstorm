@@ -8,7 +8,7 @@ all: gitlab-setup gitlab-shell-setup support-setup
 
 # Set up the GitLab Rails app
 
-gitlab-setup: gitlab/.git gitlab-config gitlab/.bundle
+gitlab-setup: gitlab/.git gitlab/.bundle initdb.sqlite3
 
 gitlab/.git:
 	git clone ${gitlab_repo} gitlab && cd gitlab && git checkout ${gitlab_repo_branch}
@@ -57,7 +57,7 @@ gitlab-shell/.git/pull:
 
 # Set up supporting services
 
-support-setup: Procfile redis postgresql .bundle
+support-setup: Procfile .bundle
 	@echo ""
 	@echo "*********************************************"
 	@echo "************** Setup finished! **************"
@@ -69,11 +69,6 @@ Procfile:
 	sed -e "s|/home/git|${gitlab_development_root}|g"\
 	  -e "s|postgres |${postgres_bin_dir}/postgres |"\
 	  $@.example > $@
-
-redis: redis/redis.conf
-
-redis/redis.conf:
-	sed "s|/home/git|${gitlab_development_root}|" $@.example > $@
 
 postgresql: postgresql/data/PG_VERSION
 
