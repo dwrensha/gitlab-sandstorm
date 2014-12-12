@@ -13,13 +13,11 @@ gitlab-setup: gitlab/.git gitlab-config gitlab/.bundle
 gitlab/.git:
 	git clone ${gitlab_repo} gitlab && cd gitlab && git checkout ${gitlab_repo_branch}
 
-gitlab-config: gitlab/config/unicorn.rb
-
-gitlab/config/unicorn.rb:
-	cp gitlab/config/unicorn.rb.example.development gitlab/config/unicorn.rb
-
 gitlab/.bundle:
 	cd gitlab && bundle install --path vendor/bundle --without test development --jobs 4
+
+initdb.sqlite3: gitlab/.bundle
+	cd gitlab && RAILS_ENV=init bundle exec rake db:create db:setup
 
 # Set up gitlab-shell
 

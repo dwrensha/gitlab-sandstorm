@@ -26,18 +26,12 @@ eval "$(rbenv init -)"
 redis-server /etc/redis.conf &
 echo "started redis-server: " $?
 
+cp initdb.sqlite3 /var/sqlite3/db.sqlite3
 cd gitlab
-
-RAILS_ENV=production bundle exec rake db:create db:setup
-echo "done setting up database:" $?
 
 bundle exec rails server -p 10000 -e production
 
 
-#bundle exec foreman start
-#bundle exec unicorn_rails -p ${PORT:="10000"} -E ${RAILS_ENV:="development"} -c ${UNICORN_CONFIG:="config/unicorn.rb"}
-#unicorn_rails -p 10000 -E "development" -c "config/unicorn.rb" -o 127.0.0.1
-#echo "started foreman: " $?
 
 
 
