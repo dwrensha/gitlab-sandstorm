@@ -35,17 +35,20 @@ const pkgdef :Spk.PackageDefinition = (
     # here are only to tell it where to find files that the app wants.
     searchPath = [
       ( sourcePath = ".", # Search this directory first.
-        hidePaths = ["gitlab/.git"]
+        hidePaths = ["gitlab/.git", ".git"]
       ),
       ( sourcePath = "/",    # Then search the system root directory.
-        hidePaths = ["home", "proc", "sys", "etc/nsswitch.conf", "etc/passwd", "etc/localtime", "etc/host.conf", "etc/resolv.conf"]
+        hidePaths = ["home", "proc", "sys", "etc/nsswitch.conf", "etc/passwd", "etc/localtime",
+                  "etc/host.conf", "etc/resolv.conf"]
       )
     ]
   ),
 
   fileList = "sandstorm-files.list",
 
-  alwaysInclude = ["gitlab/vendor", "gitlab/.gitlab_shell_secret", "gitlab/app", "gitlab/config"],
+  alwaysInclude = ["gitlab/vendor", "gitlab/.gitlab_shell_secret", "gitlab/app", "gitlab/config",
+                   "gitlab-shell/vendor", "gitlab-shell/hooks", "gitlab-shell/lib",
+                   "gitlab-satellites"],
 
   bridgeConfig = (
     viewInfo = (

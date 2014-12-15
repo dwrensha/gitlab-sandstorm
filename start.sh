@@ -2,10 +2,6 @@
 
 set -x
 
-mkdir -p /var/git/gitlab/tmp/sockets
-mkdir -p /var/git/gitlab/tmp/pids
-mkdir -p /var/git/gitlab/log
-mkdir -p /var/git/repositories
 mkdir -p /var/redis
 mkdir -p /var/log
 
@@ -27,9 +23,14 @@ redis-server /etc/redis.conf &
 echo "started redis-server: " $?
 
 cp initdb.sqlite3 /var/sqlite3/db.sqlite3
+
+# gitlab-shell wants this variable to be set. Any value will do.
+export SSH_CONNECTION=12345
+
 cd gitlab
 
-bundle exec rails server -p 10000 -e production
+RAILS_ENV=production bundle exec foreman start
+#bundle exec rails server -p 10000 -e production
 
 
 
