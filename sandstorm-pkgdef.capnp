@@ -40,7 +40,7 @@ const pkgdef :Spk.PackageDefinition = (
                      "gitlab/app/models/project_services"]
       ),
       ( sourcePath = "/",    # Then search the system root directory.
-        hidePaths = ["home", "proc", "sys", "etc/nsswitch.conf", "etc/passwd", "etc/localtime",
+        hidePaths = ["home", "proc", "sys", "etc/nsswitch.conf", "etc/localtime",
                   "etc/host.conf", "etc/resolv.conf"]
       )
     ]
@@ -49,8 +49,7 @@ const pkgdef :Spk.PackageDefinition = (
   fileList = "sandstorm-files.list",
 
   alwaysInclude = ["gitlab/vendor", "gitlab/.gitlab_shell_secret", "gitlab/app", "gitlab/config",
-                   "gitlab-shell/vendor", "gitlab-shell/hooks", "gitlab-shell/lib",
-                   "gitlab-satellites"],
+                   "gitlab-shell/vendor", "gitlab-shell/hooks", "gitlab-shell/lib"],
 
   bridgeConfig = (
     viewInfo = (

@@ -6,6 +6,7 @@ mkdir -p /var/redis
 mkdir -p /var/log
 
 mkdir -p /var/repositories
+mkdir -p /var/gitlab-satellites
 
 mkdir -p /var/tmp/cache
 mkdir -p /var/tmp/miniprofiler
