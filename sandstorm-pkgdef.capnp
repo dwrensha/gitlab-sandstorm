@@ -35,7 +35,9 @@ const pkgdef :Spk.PackageDefinition = (
     # here are only to tell it where to find files that the app wants.
     searchPath = [
       ( sourcePath = ".", # Search this directory first.
-        hidePaths = ["gitlab/.git", ".git"]
+        hidePaths = ["gitlab/.git", ".git",
+                     "gitlab/vendor/bundle/ruby/2.1.0/cache",
+                     "gitlab/app/models/project_services"]
       ),
       ( sourcePath = "/",    # Then search the system root directory.
         hidePaths = ["home", "proc", "sys", "etc/nsswitch.conf", "etc/passwd", "etc/localtime",

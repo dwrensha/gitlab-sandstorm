@@ -34,7 +34,7 @@ gitlab-shell/config.yml:
 	  gitlab-shell/config.yml.example > gitlab-shell/config.yml
 
 gitlab-shell/.bundle:
-	cd gitlab-shell && bundle install --without production --jobs 4
+	cd gitlab-shell && bundle install --path vendor/bundle --without test development --jobs 4
 
 # Update gitlab and gitlab-shell
 
