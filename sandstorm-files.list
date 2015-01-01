@@ -13,6 +13,7 @@ etc/passwd
 etc/redis.conf
 etc/ssl/cert.pem
 etc/ssl/certs/ca-certificates.crt
+gitlab
 gitlab-shell/bin/gitlab-projects
 gitlab-shell/config.yml
 gitlab-shell/hooks/post-receive
@@ -3541,6 +3542,7 @@ usr/bin/cp
 usr/bin/cut
 usr/bin/du
 usr/bin/env
+usr/bin/find
 usr/bin/git
 usr/bin/head
 usr/bin/mkdir
