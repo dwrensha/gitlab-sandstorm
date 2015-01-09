@@ -2,6 +2,9 @@ export RBENV_ROOT=/usr/local/share/rbenv
 export PATH="$RBENV_ROOT/bin:$PATH"
 eval "$(rbenv init -)"
 
+ruby --version
+which ruby
+
 rm -f /var/tmp/pids/*
 
 redis-server /etc/redis.conf &

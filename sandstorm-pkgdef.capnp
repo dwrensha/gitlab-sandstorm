@@ -41,7 +41,9 @@ const pkgdef :Spk.PackageDefinition = (
       ),
       ( sourcePath = "/",    # Then search the system root directory.
         hidePaths = ["home", "proc", "sys", "etc/nsswitch.conf", "etc/localtime",
-                  "etc/host.conf", "etc/resolv.conf"]
+                     "etc/host.conf", "etc/resolv.conf",
+                     "usr/bin/ruby"
+                        ]
       )
     ]
   ),
@@ -49,7 +51,8 @@ const pkgdef :Spk.PackageDefinition = (
   fileList = "sandstorm-files.list",
 
   alwaysInclude = ["gitlab/vendor", "gitlab/.gitlab_shell_secret", "gitlab/app", "gitlab/config",
-                   "gitlab-shell/vendor", "gitlab-shell/hooks", "gitlab-shell/lib"],
+                   "gitlab-shell/vendor", "gitlab-shell/hooks", "gitlab-shell/lib",
+                   "usr/local/share/rbenv/libexec"],
 
   bridgeConfig = (
     viewInfo = (
@@ -61,7 +64,7 @@ const pkgdef :Spk.PackageDefinition = (
 
 const startCommand :Spk.Manifest.Command = (
   # Here we define the command used to start up your server.
-  argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/sh", "start.sh"],
+  argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/bash", "start.sh"],
   environ = [
     # Note that this defines the *entire* environment seen by your app.
     (key = "PATH", value = "/usr/local/bin:/usr/bin:/bin")
@@ -70,7 +73,7 @@ const startCommand :Spk.Manifest.Command = (
 
 const continueCommand :Spk.Manifest.Command = (
   # Here we define the command used to start up your server.
-  argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/sh", "continue.sh"],
+  argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/bash", "continue.sh"],
   environ = [
     # Note that this defines the *entire* environment seen by your app.
     (key = "PATH", value = "/usr/local/bin:/usr/bin:/bin")
