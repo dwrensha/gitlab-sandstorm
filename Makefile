@@ -1,6 +1,7 @@
 gitlab_repo = https://github.com/dwrensha/gitlabhq.git
 gitlab_repo_branch = sandstorm-app
-gitlab_shell_repo = https://gitlab.com/gitlab-org/gitlab-shell.git
+gitlab_shell_repo = https://github.com/dwrensha/gitlab-shell.git
+gitlab_shell_repo_branch = sandstorm-app
 gitlab_development_root=
 postgres_bin_dir = $(shell pg_config --bindir)
 
@@ -21,17 +22,10 @@ initdb.sqlite3: gitlab/.bundle
 
 # Set up gitlab-shell
 
-gitlab-shell-setup: gitlab-shell/.git gitlab-shell/config.yml gitlab-shell/.bundle
+gitlab-shell-setup: gitlab-shell/.git gitlab-shell/.bundle
 
 gitlab-shell/.git:
-	git clone ${gitlab_shell_repo} gitlab-shell
-
-gitlab-shell/config.yml:
-	sed -e "s|/home/git|${gitlab_development_root}|"\
-	  -e "s|:8080/|:3000|"\
-	  -e "s|/usr/bin/redis-cli|$(shell which redis-cli)|"\
-	  -e "s|^  socket: .*|  socket: ${gitlab_development_root}/redis/redis.socket|"\
-	  gitlab-shell/config.yml.example > gitlab-shell/config.yml
+	git clone ${gitlab_shell_repo} gitlab-shell && git checkout ${gitlab_shell_repo_branch}
 
 gitlab-shell/.bundle:
 	cd gitlab-shell && bundle install --path vendor/bundle --without test development --jobs 4
