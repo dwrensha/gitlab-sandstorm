@@ -67,7 +67,8 @@ const startCommand :Spk.Manifest.Command = (
   argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/bash", "start.sh"],
   environ = [
     # Note that this defines the *entire* environment seen by your app.
-    (key = "PATH", value = "/usr/local/bin:/usr/bin:/bin")
+    (key = "PATH", value = "/usr/local/bin:/usr/bin:/bin"),
+    (key = "HOME", value = "/home/git")
   ]
 );
 
@@ -76,6 +77,7 @@ const continueCommand :Spk.Manifest.Command = (
   argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/bash", "continue.sh"],
   environ = [
     # Note that this defines the *entire* environment seen by your app.
-    (key = "PATH", value = "/usr/local/bin:/usr/bin:/bin")
+    (key = "PATH", value = "/usr/local/bin:/usr/bin:/bin"),
+    (key = "HOME", value = "/home/git")
   ]
 );

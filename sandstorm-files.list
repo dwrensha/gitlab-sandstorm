@@ -41,6 +41,7 @@ gitlab/app
 gitlab/app/assets
 gitlab/app/assets/images
 gitlab/app/assets/images/authbuttons
+gitlab/app/assets/images/diff_note_add.png
 gitlab/app/assets/images/icon-link.png
 gitlab/app/assets/images/icon-search.png
 gitlab/app/assets/images/logo-white.png
@@ -335,11 +336,20 @@ gitlab/app/views/projects/blob/_blob.html.haml
 gitlab/app/views/projects/blob/_remove.html.haml
 gitlab/app/views/projects/blob/_text.html.haml
 gitlab/app/views/projects/blob/show.html.haml
+gitlab/app/views/projects/commit
+gitlab/app/views/projects/commit/_commit_box.html.haml
+gitlab/app/views/projects/commit/show.html.haml
 gitlab/app/views/projects/commits
 gitlab/app/views/projects/commits/_commit.html.haml
 gitlab/app/views/projects/commits/_commits.html.haml
 gitlab/app/views/projects/commits/_head.html.haml
 gitlab/app/views/projects/commits/show.html.haml
+gitlab/app/views/projects/diffs
+gitlab/app/views/projects/diffs/_diffs.html.haml
+gitlab/app/views/projects/diffs/_file.html.haml
+gitlab/app/views/projects/diffs/_match_line.html.haml
+gitlab/app/views/projects/diffs/_stats.html.haml
+gitlab/app/views/projects/diffs/_text_file.html.haml
 gitlab/app/views/projects/edit.html.haml
 gitlab/app/views/projects/edit_tree
 gitlab/app/views/projects/edit_tree/show.html.haml
@@ -587,6 +597,7 @@ gitlab/public/assets/emoji/Aries-2426e8a8a51796afb3c9c21f9c4e9dcf.png
 gitlab/public/assets/emoji/Cancer-3a10091cd0dbecd9e1580176a934fd5a.png
 gitlab/public/assets/manifest-ed85d76040c8907cb7b33f4c48c3400d.json
 gitlab/public/assets/print-1df3ea9b8ff148a6745321899e0cb213.css
+gitlab/public/favicon.ico
 gitlab/public/static.css
 gitlab/tmp
 gitlab/vendor/assets
@@ -817,6 +828,7 @@ gitlab/vendor/bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/template/h
 gitlab/vendor/bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/template/handlers/erb.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/template/handlers/raw.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/template/resolver.rb
+gitlab/vendor/bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/template/text.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/template/types.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/vendor/html-scanner.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/vendor/html-scanner/html/node.rb
@@ -3048,6 +3060,7 @@ gitlab/vendor/bundle/ruby/2.1.0/specifications/version_sorter-1.1.0.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/virtus-1.0.1.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/warden-1.2.3.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/wikicloth-0.8.1.gemspec
+home/git/.gitconfig
 initdb.sqlite3
 lib64
 sandstorm-http-bridge
@@ -3112,7 +3125,7 @@ usr/lib/libicuuc.so.54.1
 usr/lib/liblz4.so.1
 usr/lib/liblz4.so.1.5.0
 usr/lib/liblzma.so.5
-usr/lib/liblzma.so.5.0.7
+usr/lib/liblzma.so.5.0.8
 usr/lib/libm-2.20.so
 usr/lib/libm.so.6
 usr/lib/libncursesw.so.5
