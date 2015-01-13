@@ -50,7 +50,7 @@ const pkgdef :Spk.PackageDefinition = (
 
   fileList = "sandstorm-files.list",
 
-  alwaysInclude = ["gitlab/vendor", "gitlab/app", "gitlab/config",
+  alwaysInclude = ["gitlab/vendor", "gitlab/app", "gitlab/config", "gitlab/public",
                    "gitlab-shell/vendor", "gitlab-shell/hooks", "gitlab-shell/lib",
                    "usr/local/share/rbenv/libexec"],
 

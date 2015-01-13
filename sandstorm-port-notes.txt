@@ -2,3 +2,9 @@ This is a fork of https://gitlab.com/gitlab-org/gitlab-development-kit.git
 
 You should be able type "make" and then "spk dev" and be good to go.
 
+
+You may also wish to precompile assets, which should bring down the
+size of an new grain from ~15MB to ~400KB. Do this in the gitlab/
+directory:
+
+$ RAILS_ENV=init ./bin/rake assets:precompile
