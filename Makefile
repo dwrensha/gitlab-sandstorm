@@ -20,9 +20,7 @@ gitlab/.bundle:
 initdb.sqlite3: gitlab/.bundle
 	rm -rf db
 	mkdir db
-	cd gitlab && RAILS_ENV=production bundle exec rake db:create db:setup
-	RAILS_ENV=production ./bin/rake assets:precompile
-	cd ..
+	cd gitlab && RAILS_ENV=production bundle exec rake db:create db:setup && RAILS_ENV=production ./bin/rake assets:precompile
 	mv db/db.sqlite3 initdb.sqlite3
 	rm -rf db
 	ln -s /var/sqlite3 db
