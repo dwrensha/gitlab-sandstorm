@@ -18,7 +18,14 @@ gitlab/.bundle:
 	cd gitlab && bundle install --path vendor/bundle --without test development --jobs 4
 
 initdb.sqlite3: gitlab/.bundle
-	cd gitlab && RAILS_ENV=init bundle exec rake db:create db:setup
+	rm -rf db
+	mkdir db
+	cd gitlab && RAILS_ENV=production bundle exec rake db:create db:setup
+	RAILS_ENV=production ./bin/rake assets:precompile
+	cd ..
+	mv db/db.sqlite3 initdb.sqlite3
+	rm -rf db
+	ln -s /var/sqlite3 db
 
 # Set up gitlab-shell
 
