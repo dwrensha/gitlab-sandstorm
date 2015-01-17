@@ -2017,10 +2017,6 @@ gitlab/vendor/bundle/ruby/2.1.0/gems/haml-4.0.5/lib/haml/template/plugin.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/haml-4.0.5/lib/haml/util.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/haml-4.0.5/lib/haml/version.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/haml-rails-0.5.3/lib/haml-rails.rb
-gitlab/vendor/bundle/ruby/2.1.0/gems/hashie-2.1.2/lib/hashie.rb
-gitlab/vendor/bundle/ruby/2.1.0/gems/hashie-2.1.2/lib/hashie/hash.rb
-gitlab/vendor/bundle/ruby/2.1.0/gems/hashie-2.1.2/lib/hashie/hash_extensions.rb
-gitlab/vendor/bundle/ruby/2.1.0/gems/hashie-2.1.2/lib/hashie/mash.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/hike-1.2.3/lib/hike.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/hike-1.2.3/lib/hike/extensions.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/hike-1.2.3/lib/hike/index.rb
@@ -2395,12 +2391,6 @@ gitlab/vendor/bundle/ruby/2.1.0/gems/nprogress-rails-0.1.2.3/vendor/assets/javas
 gitlab/vendor/bundle/ruby/2.1.0/gems/nprogress-rails-0.1.2.3/vendor/assets/stylesheets
 gitlab/vendor/bundle/ruby/2.1.0/gems/nprogress-rails-0.1.2.3/vendor/assets/stylesheets/nprogress-bootstrap.css
 gitlab/vendor/bundle/ruby/2.1.0/gems/nprogress-rails-0.1.2.3/vendor/assets/stylesheets/nprogress.css.scss
-gitlab/vendor/bundle/ruby/2.1.0/gems/omniauth-1.1.4/lib/omniauth.rb
-gitlab/vendor/bundle/ruby/2.1.0/gems/omniauth-1.1.4/lib/omniauth/auth_hash.rb
-gitlab/vendor/bundle/ruby/2.1.0/gems/omniauth-1.1.4/lib/omniauth/failure_endpoint.rb
-gitlab/vendor/bundle/ruby/2.1.0/gems/omniauth-1.1.4/lib/omniauth/form.rb
-gitlab/vendor/bundle/ruby/2.1.0/gems/omniauth-1.1.4/lib/omniauth/strategy.rb
-gitlab/vendor/bundle/ruby/2.1.0/gems/omniauth-1.1.4/lib/omniauth/version.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/org-ruby-0.9.12/lib/org-ruby.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/org-ruby-0.9.12/lib/org-ruby/headline.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/org-ruby-0.9.12/lib/org-ruby/html_output_buffer.rb
@@ -3245,7 +3235,6 @@ gitlab/vendor/bundle/ruby/2.1.0/specifications/gollum-lib-3.0.0.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/gon-5.0.1.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/haml-4.0.5.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/haml-rails-0.5.3.gemspec
-gitlab/vendor/bundle/ruby/2.1.0/specifications/hashie-2.1.2.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/hike-1.2.3.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/html-pipeline-1.11.0.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/html-pipeline-gitlab-0.1.5.gemspec
@@ -3268,7 +3257,6 @@ gitlab/vendor/bundle/ruby/2.1.0/specifications/multi_json-1.10.1.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/multi_xml-0.5.5.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/nokogiri-1.6.2.1.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/nprogress-rails-0.1.2.3.gemspec
-gitlab/vendor/bundle/ruby/2.1.0/specifications/omniauth-1.1.4.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/org-ruby-0.9.12.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/orm_adapter-0.5.0.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/polyglot-0.3.4.gemspec
