@@ -39,6 +39,8 @@ const pkgdef :Spk.PackageDefinition = (
                      "gitlab/vendor/bundle/ruby/2.1.0/cache",
                      "gitlab/lib/gitlab/ldap",
                      "gitlab/lib/gitlab/oauth",
+                     "gitlab/lib/api",
+                     "gitlab/app/controllers/oauth",
                      "gitlab/app/models/project_services"]
       ),
       ( sourcePath = "/",    # Then search the system root directory.
