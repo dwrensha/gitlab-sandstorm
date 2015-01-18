@@ -617,6 +617,7 @@ gitlab/app/views/shared/_confirm_modal.html.haml
 gitlab/app/views/shared/_event_filter.html.haml
 gitlab/app/views/shared/_no_ssh.html.haml
 gitlab/app/views/shared/_outdated_browser.html.haml
+gitlab/app/views/shared/_ref_switcher.html.haml
 gitlab/app/views/users
 gitlab/app/views/users/_groups.html.haml
 gitlab/app/views/users/_profile.html.haml
@@ -780,6 +781,8 @@ gitlab/public/assets/jquery-ui/ui-bg_flat_75_ffffff_40x100-4522b2929018ca88e37ab
 gitlab/public/assets/logo-white-96c5cdf684c799df72c830d36ecc7fec.png
 gitlab/public/assets/manifest-10529c29e009e8ae08b6502bcfe01bef.json
 gitlab/public/assets/print-1df3ea9b8ff148a6745321899e0cb213.css
+gitlab/public/assets/select2-12a5225b990a1858d32c43559cc9d2ec.png
+gitlab/public/assets/select2x2-3fa53aca7e2507446a2d5117e6a6f582.png
 gitlab/public/static.css
 gitlab/tmp
 gitlab/tmp/pids
