@@ -659,7 +659,6 @@ gitlab/config/initializers/haml.rb
 gitlab/config/initializers/inflections.rb
 gitlab/config/initializers/kaminari_config.rb
 gitlab/config/initializers/mime_types.rb
-gitlab/config/initializers/postgresql_limit_fix.rb
 gitlab/config/initializers/redis-store-fix-expiry.rb
 gitlab/config/initializers/sandstorm_accept_header.rb
 gitlab/config/initializers/sandstorm_strategy.rb
@@ -677,11 +676,6 @@ gitlab/config/routes.rb
 gitlab/doc/README.md
 gitlab/lib
 gitlab/lib/assets
-gitlab/lib/backup
-gitlab/lib/backup/database.rb
-gitlab/lib/backup/manager.rb
-gitlab/lib/backup/repository.rb
-gitlab/lib/backup/uploads.rb
 gitlab/lib/disable_email_interceptor.rb
 gitlab/lib/email_validator.rb
 gitlab/lib/event_filter.rb
