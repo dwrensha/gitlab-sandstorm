@@ -767,16 +767,6 @@ gitlab/public
 gitlab/public/404.html
 gitlab/public/500.html
 gitlab/public/assets
-gitlab/public/assets/application-808894adf4d7ba01c45449e9e0919f78.css
-gitlab/public/assets/application-f4b65155636a68e0a9c9906f8f86efef.js
-gitlab/public/assets/fontawesome-webfont-5639461111244044e4207f6b8d0d10d4.woff
-gitlab/public/assets/icon-search-ef72361b253d3542782992fbe8713b27.png
-gitlab/public/assets/jquery-ui/ui-bg_flat_75_ffffff_40x100-4522b2929018ca88e37ab8c877107822.png
-gitlab/public/assets/logo-white-96c5cdf684c799df72c830d36ecc7fec.png
-gitlab/public/assets/manifest-10529c29e009e8ae08b6502bcfe01bef.json
-gitlab/public/assets/print-1df3ea9b8ff148a6745321899e0cb213.css
-gitlab/public/assets/select2-12a5225b990a1858d32c43559cc9d2ec.png
-gitlab/public/assets/select2x2-3fa53aca7e2507446a2d5117e6a6f582.png
 gitlab/public/static.css
 gitlab/tmp
 gitlab/tmp/pids
