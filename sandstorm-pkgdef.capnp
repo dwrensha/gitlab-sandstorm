@@ -20,7 +20,7 @@ const pkgdef :Spk.PackageDefinition = (
     appVersion = 0,  # Increment this for every release.
 
     actions = [
-      ( title = (defaultText = "New GitLab Repo"),
+      ( title = (defaultText = "New GitLab Repository"),
         command = .startCommand
       )
     ],
@@ -37,7 +37,6 @@ const pkgdef :Spk.PackageDefinition = (
       ( sourcePath = ".", # Search this directory first.
         hidePaths = ["gitlab/.git", ".git",
                      "gitlab/vendor/bundle/ruby/2.1.0/cache",
-                     "gitlab/lib/gitlab/oauth",
                      "gitlab/app/controllers/oauth",
                      "gitlab/app/models/project_services"]
       ),
