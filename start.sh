@@ -15,6 +15,8 @@ mkdir -p /var/tmp/sessions
 mkdir -p /var/tmp/sockets
 mkdir -p /var/tmp/repositories
 
+mkdir -p /var/uploads
+
 mkdir -p /var/sqlite3
 
 export RBENV_ROOT=/usr/local/share/rbenv

@@ -615,9 +615,11 @@ gitlab/app/views/shared/_clone_panel.html.haml
 gitlab/app/views/shared/_commit_message_container.html.haml
 gitlab/app/views/shared/_confirm_modal.html.haml
 gitlab/app/views/shared/_event_filter.html.haml
+gitlab/app/views/shared/_issuable_filter.html.haml
 gitlab/app/views/shared/_no_ssh.html.haml
 gitlab/app/views/shared/_outdated_browser.html.haml
 gitlab/app/views/shared/_ref_switcher.html.haml
+gitlab/app/views/shared/_sort_dropdown.html.haml
 gitlab/app/views/users
 gitlab/app/views/users/_groups.html.haml
 gitlab/app/views/users/_profile.html.haml
@@ -768,6 +770,7 @@ gitlab/public/404.html
 gitlab/public/500.html
 gitlab/public/assets
 gitlab/public/static.css
+gitlab/public/uploads
 gitlab/tmp
 gitlab/tmp/pids
 gitlab/tmp/repositories
@@ -3472,7 +3475,7 @@ usr/lib/libicuuc.so.54.1
 usr/lib/liblz4.so.1
 usr/lib/liblz4.so.1.5.0
 usr/lib/liblzma.so.5
-usr/lib/liblzma.so.5.0.8
+usr/lib/liblzma.so.5.2.0
 usr/lib/libm-2.20.so
 usr/lib/libm.so.6
 usr/lib/libncursesw.so.5
