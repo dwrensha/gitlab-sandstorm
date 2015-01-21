@@ -53,8 +53,7 @@ const pkgdef :Spk.PackageDefinition = (
 
   alwaysInclude = ["gitlab/vendor", "gitlab/app", "gitlab/config", "gitlab/public",
                    "gitlab/tmp",
-                   "gitlab-shell/vendor", "gitlab-shell/hooks", "gitlab-shell/lib",
-                   "usr/local/share/rbenv/libexec"],
+                   "gitlab-shell/vendor", "gitlab-shell/hooks", "gitlab-shell/lib"],
 
   bridgeConfig = (
     viewInfo = (
