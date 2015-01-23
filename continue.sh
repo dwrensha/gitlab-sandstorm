@@ -1,3 +1,7 @@
+#! /bin/sh
+
+set -x
+
 export PATH="/usr/local/share/rbenv/shims:$PATH"
 
 rm -f /var/tmp/pids/*
