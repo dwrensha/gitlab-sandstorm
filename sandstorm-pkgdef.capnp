@@ -65,7 +65,7 @@ const pkgdef :Spk.PackageDefinition = (
 
 const startCommand :Spk.Manifest.Command = (
   # Here we define the command used to start up your server.
-  argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/bash", "start.sh"],
+  argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/sh", "start.sh"],
   environ = [
     # Note that this defines the *entire* environment seen by your app.
     (key = "PATH", value = "/usr/local/bin:/usr/bin:/bin"),
@@ -75,7 +75,7 @@ const startCommand :Spk.Manifest.Command = (
 
 const continueCommand :Spk.Manifest.Command = (
   # Here we define the command used to start up your server.
-  argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/bash", "continue.sh"],
+  argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/sh", "continue.sh"],
   environ = [
     # Note that this defines the *entire* environment seen by your app.
     (key = "PATH", value = "/usr/local/bin:/usr/bin:/bin"),

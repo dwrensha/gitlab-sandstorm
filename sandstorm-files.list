@@ -783,6 +783,7 @@ gitlab/public/assets/jquery-ui/ui-bg_flat_75_ffffff_40x100-4522b2929018ca88e37ab
 gitlab/public/assets/logo-white-96c5cdf684c799df72c830d36ecc7fec.png
 gitlab/public/assets/manifest-7e1f4fae9c286e10d547ece328d46fd0.json
 gitlab/public/assets/print-1df3ea9b8ff148a6745321899e0cb213.css
+gitlab/public/assets/select2x2-3fa53aca7e2507446a2d5117e6a6f582.png
 gitlab/public/assets/webkey-607a788dbf52ec7ac4f1d5abaaaa3b36.png
 gitlab/public/favicon.ico
 gitlab/public/static.css
@@ -3434,7 +3435,6 @@ start.sh
 usr/bin
 usr/bin/awk
 usr/bin/basename
-usr/bin/bash
 usr/bin/busybox
 usr/bin/bzip2
 usr/bin/cat
@@ -3481,8 +3481,6 @@ usr/lib/libgcrypt.so.20
 usr/lib/libgcrypt.so.20.0.2
 usr/lib/libgmp.so.10
 usr/lib/libgmp.so.10.2.0
-usr/lib/libgpg-error.so.0
-usr/lib/libgpg-error.so.0.13.0
 usr/lib/libicudata.so.54
 usr/lib/libicudata.so.54.1
 usr/lib/libicui18n.so.54

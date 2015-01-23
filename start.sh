@@ -19,7 +19,7 @@ mkdir -p /var/uploads
 
 mkdir -p /var/sqlite3
 
-export PATH="/usr/local/share/rbenv/shims:$PATH"
+export PATH="/usr/local/share/rbenv/versions/2.1.5/bin:$PATH"
 
 redis-server /etc/redis.conf &
 echo "started redis-server: " $?
