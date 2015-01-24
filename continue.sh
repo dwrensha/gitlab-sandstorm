@@ -13,7 +13,9 @@ cd gitlab
 
 export SSH_CONNECTION=12345
 
-RAILS_ENV=production bundle exec sidekiq -q post_receive -q default 2>&1 | awk '{print "sidekiq: " $0}' &
-bundle exec rails server -p 10000 -e production
+export GEM_HOME=/gitlab/vendor/bundle/ruby/2.1.0
+RUBYOPT=-r/gitlab/vendor/bundle/bundler/setup RAILS_ENV=production ./vendor/bundle/ruby/2.1.0/bin/sidekiq -q post_receive -q default 2>&1 | awk '{print "sidekiq: " $0}' &
+./bin/rails server -p 10000 -e production
+
 
 
