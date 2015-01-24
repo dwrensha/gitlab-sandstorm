@@ -775,16 +775,6 @@ gitlab/public
 gitlab/public/404.html
 gitlab/public/500.html
 gitlab/public/assets
-gitlab/public/assets/application-00251e145c7aa3a7c9c351319f8f2e4c.js
-gitlab/public/assets/application-808894adf4d7ba01c45449e9e0919f78.css
-gitlab/public/assets/fontawesome-webfont-5639461111244044e4207f6b8d0d10d4.woff
-gitlab/public/assets/icon-search-ef72361b253d3542782992fbe8713b27.png
-gitlab/public/assets/jquery-ui/ui-bg_flat_75_ffffff_40x100-4522b2929018ca88e37ab8c877107822.png
-gitlab/public/assets/logo-white-96c5cdf684c799df72c830d36ecc7fec.png
-gitlab/public/assets/manifest-7e1f4fae9c286e10d547ece328d46fd0.json
-gitlab/public/assets/print-1df3ea9b8ff148a6745321899e0cb213.css
-gitlab/public/assets/select2x2-3fa53aca7e2507446a2d5117e6a6f582.png
-gitlab/public/assets/webkey-607a788dbf52ec7ac4f1d5abaaaa3b36.png
 gitlab/public/favicon.ico
 gitlab/public/static.css
 gitlab/public/uploads
@@ -1960,7 +1950,6 @@ gitlab/vendor/bundle/ruby/2.1.0/gems/gitlab_git-7.0.0.rc14/lib/gitlab_git/ref.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/gitlab_git-7.0.0.rc14/lib/gitlab_git/repository.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/gitlab_git-7.0.0.rc14/lib/gitlab_git/tag.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/gitlab_git-7.0.0.rc14/lib/gitlab_git/tree.rb
-gitlab/vendor/bundle/ruby/2.1.0/gems/gitlab_meta-7.0/lib/gitlab_meta.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/gollum-grit_adapter-0.1.0/lib/grit_adapter.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/gollum-grit_adapter-0.1.0/lib/grit_adapter/git_layer_grit.rb
 gitlab/vendor/bundle/ruby/2.1.0/gems/gollum-lib-4.0.0/lib/gollum-lib.rb
@@ -3296,7 +3285,6 @@ gitlab/vendor/bundle/ruby/2.1.0/specifications/gitlab-grit-2.7.2.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/gitlab-linguist-3.0.0.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/gitlab_emoji-0.0.1.1.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/gitlab_git-7.0.0.rc14.gemspec
-gitlab/vendor/bundle/ruby/2.1.0/specifications/gitlab_meta-7.0.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/gollum-grit_adapter-0.1.0.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/gollum-lib-4.0.0.gemspec
 gitlab/vendor/bundle/ruby/2.1.0/specifications/gon-5.0.1.gemspec
