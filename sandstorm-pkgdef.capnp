@@ -36,7 +36,7 @@ const pkgdef :Spk.PackageDefinition = (
     searchPath = [
       ( sourcePath = ".", # Search this directory first.
         hidePaths = ["gitlab/.git", ".git",
-                     "gitlab/vendor/bundle/ruby/2.1.0/cache",
+                     "gitlab/.bundle/ruby/2.1.0/cache",
                      "gitlab/app/controllers/oauth",
                      "gitlab/app/models/project_services"]
       ),
@@ -51,7 +51,7 @@ const pkgdef :Spk.PackageDefinition = (
 
   fileList = "sandstorm-files.list",
 
-  alwaysInclude = ["gitlab/vendor", "gitlab/app", "gitlab/config", "gitlab/public",
+  alwaysInclude = ["gitlab/vendor", "gitlab/.bundle", "gitlab/app", "gitlab/config", "gitlab/public",
                    "gitlab/tmp",
                    "gitlab-shell/vendor", "gitlab-shell/hooks", "gitlab-shell/lib",
                    "usr/bin/node"],

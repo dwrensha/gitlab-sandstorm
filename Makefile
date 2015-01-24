@@ -15,12 +15,12 @@ gitlab/.git:
 	git clone ${gitlab_repo} gitlab && cd gitlab && git checkout ${gitlab_repo_branch}
 
 gitlab/.bundle:
-	cd gitlab && bundle install --path vendor/bundle --without test development --jobs 4 --standalone
+	cd gitlab && bundle install --path .bundle --without test development --jobs 4 --standalone
 
 initdb.sqlite3: gitlab/.bundle
 	rm -rf db
 	mkdir db
-	find gitlab/vendor/bundle -type f -name "jquery.atwho.js" -exec sed -i 's/@ sourceMappingURL=jquery.caret.map//g' {} \;
+	find gitlab/.bundle -type f -name "jquery.atwho.js" -exec sed -i 's/@ sourceMappingURL=jquery.caret.map//g' {} \;
 	cd gitlab && RAILS_ENV=production bundle exec rake db:create db:setup && RAILS_ENV=production ./bin/rake assets:precompile
 	mv db/db.sqlite3 initdb.sqlite3
 	rm -rf db
