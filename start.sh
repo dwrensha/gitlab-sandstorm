@@ -8,7 +8,6 @@ mkdir -p /var/log
 mkdir -p /var/repositories
 mkdir -p /var/gitlab-satellites
 
-mkdir -p /var/tmp/cache
 mkdir -p /var/tmp/miniprofiler
 mkdir -p /var/tmp/pids
 mkdir -p /var/tmp/sessions
@@ -18,8 +17,6 @@ mkdir -p /var/tmp/repositories
 mkdir -p /var/uploads
 
 mkdir -p /var/sqlite3
-
-export PATH="/usr/local/share/rbenv/versions/2.1.5/bin:$PATH"
 
 redis-server /etc/redis.conf &
 echo "started redis-server: " $?

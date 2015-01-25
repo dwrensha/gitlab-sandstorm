@@ -2,8 +2,6 @@
 
 set -x
 
-export PATH="/usr/local/share/rbenv/versions/2.1.5/bin:$PATH"
-
 rm -f /var/tmp/pids/*
 
 redis-server /etc/redis.conf &
