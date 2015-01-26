@@ -64,7 +64,7 @@ const pkgdef :Spk.PackageDefinition = (
 
 const commandEnvironment : List(Util.KeyValue) =
   [
-    (key = "PATH", value = "/usr/local/share/rbenv/versions/2.1.5/bin:/usr/local/bin:/usr/bin:/bin"),
+    (key = "PATH", value = "/usr/local/rbenv/versions/2.1.5/bin:/usr/local/bin:/usr/bin:/bin"),
     (key = "HOME", value = "/home/git")
   ];
 
