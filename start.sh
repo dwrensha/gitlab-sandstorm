@@ -1,5 +1,3 @@
-#! /bin/sh
-
 set -x
 
 mkdir -p /var/redis

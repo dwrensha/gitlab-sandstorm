@@ -1,5 +1,3 @@
-#! /bin/sh
-
 set -x
 
 rm -f /var/tmp/pids/*
