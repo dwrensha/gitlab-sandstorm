@@ -2382,7 +2382,6 @@ gitlab/.bundle/ruby/2.1.0/specifications/virtus-1.0.1.gemspec
 gitlab/.bundle/ruby/2.1.0/specifications/warden-1.2.3.gemspec
 gitlab/.bundle/ruby/2.1.0/specifications/wikicloth-0.8.1.gemspec
 gitlab/.ruby-version
-gitlab/.secret
 gitlab/Gemfile
 gitlab/Gemfile.lock
 gitlab/VERSION
@@ -3125,15 +3124,6 @@ gitlab/public
 gitlab/public/404.html
 gitlab/public/500.html
 gitlab/public/assets
-gitlab/public/assets/application-00251e145c7aa3a7c9c351319f8f2e4c.js
-gitlab/public/assets/application-808894adf4d7ba01c45449e9e0919f78.css
-gitlab/public/assets/fontawesome-webfont-5639461111244044e4207f6b8d0d10d4.woff
-gitlab/public/assets/icon-search-ef72361b253d3542782992fbe8713b27.png
-gitlab/public/assets/jquery-ui/ui-bg_flat_75_ffffff_40x100-4522b2929018ca88e37ab8c877107822.png
-gitlab/public/assets/logo-white-96c5cdf684c799df72c830d36ecc7fec.png
-gitlab/public/assets/manifest-970df7c7cd713406d6dbc22cd62a1c9f.json
-gitlab/public/assets/print-1df3ea9b8ff148a6745321899e0cb213.css
-gitlab/public/assets/webkey-607a788dbf52ec7ac4f1d5abaaaa3b36.png
 gitlab/public/favicon.ico
 gitlab/public/static.css
 gitlab/public/uploads

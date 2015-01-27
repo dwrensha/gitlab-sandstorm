@@ -21,7 +21,7 @@ initdb.sqlite3: gitlab/.bundle
 	rm -rf db
 	mkdir db
 	find gitlab/.bundle -type f -name "jquery.atwho.js" -exec sed -i 's/@ sourceMappingURL=jquery.caret.map//g' {} \;
-	cd gitlab && RAILS_ENV=production bundle exec rake db:create db:setup && RAILS_ENV=production ./bin/rake assets:precompile
+	cd gitlab && SECRET_KEY_BASE='not so secret' RAILS_ENV=production ./bin/rake db:create db:setup && SECRET_KEY_BASE='not so secret' RAILS_ENV=production ./bin/rake assets:precompile
 	mv db/db.sqlite3 initdb.sqlite3
 	rm -rf db
 	ln -s /var/sqlite3 db
@@ -55,25 +55,4 @@ gitlab/.git/pull:
 gitlab-shell/.git/pull:
 	cd gitlab-shell && git pull --ff-only
 
-# Set up supporting services
 
-support-setup: Procfile .bundle
-	@echo ""
-	@echo "*********************************************"
-	@echo "************** Setup finished! **************"
-	@echo "*********************************************"
-	sed -n '/^### Post-installation/,/^END Post-installation/p' README.md
-	@echo "*********************************************"
-
-Procfile:
-	sed -e "s|/home/git|${gitlab_development_root}|g"\
-	  -e "s|postgres |${postgres_bin_dir}/postgres |"\
-	  $@.example > $@
-
-postgresql: postgresql/data/PG_VERSION
-
-postgresql/data/PG_VERSION:
-	${postgres_bin_dir}/initdb -E utf-8 postgresql/data
-
-.bundle:
-	bundle install --jobs 4
