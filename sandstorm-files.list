@@ -218,7 +218,12 @@ gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/helpers/sanitize
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/helpers/tag_helper.rb
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/helpers/tags.rb
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/helpers/tags/base.rb
+gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/helpers/tags/file_field.rb
+gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/helpers/tags/hidden_field.rb
+gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/helpers/tags/label.rb
+gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/helpers/tags/select.rb
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/helpers/tags/text_area.rb
+gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/helpers/tags/text_field.rb
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/helpers/text_helper.rb
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/helpers/translation_helper.rb
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/helpers/url_helper.rb
@@ -304,6 +309,7 @@ gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.1/lib/active_record/associations
 gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.1/lib/active_record/associations/has_one_association.rb
 gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.1/lib/active_record/associations/has_one_through_association.rb
 gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.1/lib/active_record/associations/join_dependency.rb
+gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.1/lib/active_record/associations/join_dependency/join_association.rb
 gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.1/lib/active_record/associations/join_dependency/join_base.rb
 gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.1/lib/active_record/associations/join_dependency/join_part.rb
 gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.1/lib/active_record/associations/preloader.rb
@@ -1488,6 +1494,7 @@ gitlab/.bundle/ruby/2.1.0/gems/rack-1.5.2/lib/rack/lock.rb
 gitlab/.bundle/ruby/2.1.0/gems/rack-1.5.2/lib/rack/methodoverride.rb
 gitlab/.bundle/ruby/2.1.0/gems/rack-1.5.2/lib/rack/mime.rb
 gitlab/.bundle/ruby/2.1.0/gems/rack-1.5.2/lib/rack/multipart.rb
+gitlab/.bundle/ruby/2.1.0/gems/rack-1.5.2/lib/rack/multipart/parser.rb
 gitlab/.bundle/ruby/2.1.0/gems/rack-1.5.2/lib/rack/request.rb
 gitlab/.bundle/ruby/2.1.0/gems/rack-1.5.2/lib/rack/response.rb
 gitlab/.bundle/ruby/2.1.0/gems/rack-1.5.2/lib/rack/runtime.rb
@@ -3124,6 +3131,16 @@ gitlab/public
 gitlab/public/404.html
 gitlab/public/500.html
 gitlab/public/assets
+gitlab/public/assets/application-00251e145c7aa3a7c9c351319f8f2e4c.js
+gitlab/public/assets/application-808894adf4d7ba01c45449e9e0919f78.css
+gitlab/public/assets/fontawesome-webfont-5639461111244044e4207f6b8d0d10d4.woff
+gitlab/public/assets/icon-search-ef72361b253d3542782992fbe8713b27.png
+gitlab/public/assets/jquery-ui/ui-bg_flat_75_ffffff_40x100-4522b2929018ca88e37ab8c877107822.png
+gitlab/public/assets/logo-white-96c5cdf684c799df72c830d36ecc7fec.png
+gitlab/public/assets/manifest-43cd62e0a877868e2c5d943cdc6c2d38.json
+gitlab/public/assets/print-1df3ea9b8ff148a6745321899e0cb213.css
+gitlab/public/assets/select2x2-3fa53aca7e2507446a2d5117e6a6f582.png
+gitlab/public/assets/webkey-607a788dbf52ec7ac4f1d5abaaaa3b36.png
 gitlab/public/favicon.ico
 gitlab/public/static.css
 gitlab/public/uploads
@@ -3153,6 +3170,7 @@ sandstorm-manifest
 start.sh
 usr/bin
 usr/bin/awk
+usr/bin/base64
 usr/bin/basename
 usr/bin/busybox
 usr/bin/bzip2
@@ -3195,6 +3213,8 @@ usr/lib/libcrypt.so.1
 usr/lib/libcrypto.so.1.0.0
 usr/lib/libdl-2.20.so
 usr/lib/libdl.so.2
+usr/lib/libffi.so.6
+usr/lib/libffi.so.6.0.4
 usr/lib/libgcc_s.so.1
 usr/lib/libgcrypt.so.20
 usr/lib/libgcrypt.so.20.0.2

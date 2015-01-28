@@ -5,7 +5,7 @@ gitlab_shell_repo_branch = sandstorm-app
 gitlab_development_root=
 postgres_bin_dir = $(shell pg_config --bindir)
 
-all: gitlab-setup gitlab-shell-setup support-setup
+all: gitlab-setup
 
 # Set up the GitLab Rails app
 
@@ -34,7 +34,7 @@ gitlab-shell/.git:
 	git clone ${gitlab_shell_repo} gitlab-shell && git checkout ${gitlab_shell_repo_branch}
 
 gitlab-shell/.bundle:
-	cd gitlab-shell && bundle install --path vendor/bundle --without test development --jobs 4
+	cd gitlab-shell && bundle install --path .bundle --without test development --jobs 4
 
 # Update gitlab and gitlab-shell
 
