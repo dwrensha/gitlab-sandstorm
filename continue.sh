@@ -1,7 +1,5 @@
 set -x
 
-rm -f /var/tmp/pids/*
-
 redis-server /etc/redis.conf &
 echo "started redis-server: " $?
 

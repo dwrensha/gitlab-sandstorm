@@ -6,10 +6,6 @@ mkdir -p /var/log
 mkdir -p /var/repositories
 mkdir -p /var/gitlab-satellites
 
-mkdir -p /var/tmp/miniprofiler
-mkdir -p /var/tmp/pids
-mkdir -p /var/tmp/sessions
-mkdir -p /var/tmp/sockets
 mkdir -p /var/tmp/repositories
 
 mkdir -p /var/uploads
