@@ -1,3 +1,0 @@
-#!/bin/sh
-umask 077
-/usr/libexec/slapd -F slapd.d -d1 -h "ldapi://slapd.socket ldap://127.0.0.1:3891"

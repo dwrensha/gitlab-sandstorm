@@ -1,3 +1,0 @@
-redis: redis-server /home/git/redis/redis.conf
-postgresql: postgres -D /home/git/postgresql/data -k /home/git/postgresql -h ''
-#openldap: cd gitlab-openldap && libexec/slapd -F slapd.d -d2 -h "ldap://127.0.0.1:3890"
