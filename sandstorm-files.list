@@ -242,6 +242,7 @@ gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/renderer/templat
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/rendering.rb
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/routing_url_for.rb
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/template.rb
+gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/template/error.rb
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/template/handlers.rb
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/template/handlers/builder.rb
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/template/handlers/erb.rb
@@ -561,6 +562,8 @@ gitlab/.bundle/ruby/2.1.0/gems/activesupport-4.1.1/lib/active_support/notificati
 gitlab/.bundle/ruby/2.1.0/gems/activesupport-4.1.1/lib/active_support/number_helper.rb
 gitlab/.bundle/ruby/2.1.0/gems/activesupport-4.1.1/lib/active_support/number_helper/number_converter.rb
 gitlab/.bundle/ruby/2.1.0/gems/activesupport-4.1.1/lib/active_support/number_helper/number_to_delimited_converter.rb
+gitlab/.bundle/ruby/2.1.0/gems/activesupport-4.1.1/lib/active_support/number_helper/number_to_human_size_converter.rb
+gitlab/.bundle/ruby/2.1.0/gems/activesupport-4.1.1/lib/active_support/number_helper/number_to_rounded_converter.rb
 gitlab/.bundle/ruby/2.1.0/gems/activesupport-4.1.1/lib/active_support/option_merger.rb
 gitlab/.bundle/ruby/2.1.0/gems/activesupport-4.1.1/lib/active_support/ordered_hash.rb
 gitlab/.bundle/ruby/2.1.0/gems/activesupport-4.1.1/lib/active_support/ordered_options.rb
@@ -2866,6 +2869,7 @@ gitlab/app/views/profiles/emails/index.html.haml
 gitlab/app/views/profiles/history.html.haml
 gitlab/app/views/profiles/show.html.haml
 gitlab/app/views/projects
+gitlab/app/views/projects/_blob_editor.html.haml
 gitlab/app/views/projects/_commit_button.html.haml
 gitlab/app/views/projects/_dropdown.html.haml
 gitlab/app/views/projects/_home_panel.html.haml
@@ -2884,6 +2888,7 @@ gitlab/app/views/projects/blob/show.html.haml
 gitlab/app/views/projects/branches
 gitlab/app/views/projects/branches/_branch.html.haml
 gitlab/app/views/projects/branches/index.html.haml
+gitlab/app/views/projects/branches/new.html.haml
 gitlab/app/views/projects/commit
 gitlab/app/views/projects/commit/_commit_box.html.haml
 gitlab/app/views/projects/commit/show.html.haml
@@ -2946,6 +2951,8 @@ gitlab/app/views/projects/network
 gitlab/app/views/projects/network/_head.html.haml
 gitlab/app/views/projects/network/show.html.haml
 gitlab/app/views/projects/network/show.json.erb
+gitlab/app/views/projects/new_tree
+gitlab/app/views/projects/new_tree/show.html.haml
 gitlab/app/views/projects/notes
 gitlab/app/views/projects/notes/_diff_notes_with_reply.html.haml
 gitlab/app/views/projects/notes/_form.html.haml
@@ -2957,6 +2964,10 @@ gitlab/app/views/projects/refs/logs_tree.js.haml
 gitlab/app/views/projects/repositories
 gitlab/app/views/projects/repositories/_download_archive.html.haml
 gitlab/app/views/projects/show.html.haml
+gitlab/app/views/projects/tags
+gitlab/app/views/projects/tags/_tag.html.haml
+gitlab/app/views/projects/tags/index.html.haml
+gitlab/app/views/projects/tags/new.html.haml
 gitlab/app/views/projects/tree
 gitlab/app/views/projects/tree/_blob_item.html.haml
 gitlab/app/views/projects/tree/_readme.html.haml
@@ -2979,6 +2990,7 @@ gitlab/app/views/shared/_clone_panel.html.haml
 gitlab/app/views/shared/_commit_message_container.html.haml
 gitlab/app/views/shared/_confirm_modal.html.haml
 gitlab/app/views/shared/_event_filter.html.haml
+gitlab/app/views/shared/_file_highlight.html.haml
 gitlab/app/views/shared/_issuable_filter.html.haml
 gitlab/app/views/shared/_no_ssh.html.haml
 gitlab/app/views/shared/_outdated_browser.html.haml
@@ -3136,11 +3148,13 @@ gitlab/public/assets
 gitlab/public/assets/application-00251e145c7aa3a7c9c351319f8f2e4c.js
 gitlab/public/assets/application-808894adf4d7ba01c45449e9e0919f78.css
 gitlab/public/assets/fontawesome-webfont-5639461111244044e4207f6b8d0d10d4.woff
+gitlab/public/assets/icon-link-3df3ba60517cfc44dd07fd7c9f717c80.png
 gitlab/public/assets/icon-search-ef72361b253d3542782992fbe8713b27.png
 gitlab/public/assets/jquery-ui/ui-bg_flat_75_ffffff_40x100-4522b2929018ca88e37ab8c877107822.png
 gitlab/public/assets/logo-white-96c5cdf684c799df72c830d36ecc7fec.png
 gitlab/public/assets/manifest-dbd5f58ab936baf5690436d9f554841a.json
 gitlab/public/assets/print-1df3ea9b8ff148a6745321899e0cb213.css
+gitlab/public/assets/select2x2-3fa53aca7e2507446a2d5117e6a6f582.png
 gitlab/public/assets/webkey-607a788dbf52ec7ac4f1d5abaaaa3b36.png
 gitlab/public/favicon.ico
 gitlab/public/static.css

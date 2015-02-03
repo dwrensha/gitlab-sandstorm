@@ -1,2 +1,5 @@
+[user]
+	name = GitLab Shell
+    email = fake@example.com
 [core]
 	autocrlf = input
