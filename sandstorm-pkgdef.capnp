@@ -4,21 +4,17 @@ using Spk = import "/sandstorm/package.capnp";
 using Util = import "/sandstorm/util.capnp";
 
 const pkgdef :Spk.PackageDefinition = (
-  # The package definition. Note that the spk tool looks specifically for the
-  # "pkgdef" constant.
-
   id = "zx9d3pt0fjh4uqrprjftgpqfwgzp6y2ena6098ug3ctv37uv6kfh",
-  # Your app ID is actually its public key. The private key was placed in
-  # your keyring. All updates must be signed with the same key.
 
   manifest = (
-    # This manifest is included in your app package to tell Sandstorm
-    # about your app.
 
     appVersion = 1,  # Increment this for every release.
+    appTitle = (defaultText = "GitLab"),
+    appMarketingVersion = (defaultText = "2015.8.23"),
 
     actions = [
       ( title = (defaultText = "New GitLab Repository"),
+        nounPhrase = (defaultText = "GitLab Repository"),
         command = .startCommand
       )
     ],
