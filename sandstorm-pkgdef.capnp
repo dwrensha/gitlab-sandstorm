@@ -12,6 +12,27 @@ const pkgdef :Spk.PackageDefinition = (
     appTitle = (defaultText = "GitLab"),
     appMarketingVersion = (defaultText = "2015.8.23"),
 
+    metadata = (
+      icons = (
+        appGrid = (svg = embed "app-graphics/gitlab-128.svg"),
+        grain = (svg = embed "app-graphics/gitlab-24.svg"),
+        market = (svg = embed "app-graphics/gitlab-150.svg"),
+       ),
+       website = "https://about.gitlab.com/",
+       codeUrl = "https://github.com/dwrensha/gitlab-sandstorm",
+       license = (openSource = mit),
+       categories = [developerTools,],
+       author = (
+         upstreamAuthor = "GitLab Inc.",
+         contactEmail = "david@sandstorm.io",
+         pgpSignature = embed "pgp-signature",
+       ),
+       pgpKeyring = embed "pgp-keyring",
+       description = (defaultText = embed "description.md"),
+       screenshots = [],
+       changeLog = (defaultText = embed "changeLog.md"),
+     ),
+
     actions = [
       ( title = (defaultText = "New GitLab Repository"),
         nounPhrase = (defaultText = "GitLab Repository"),
