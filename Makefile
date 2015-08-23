@@ -29,6 +29,6 @@ initdb.sqlite3: gitlab/.bundle
 gitlab-shell-setup: gitlab-shell/.git
 
 gitlab-shell/.git:
-	git clone ${gitlab_shell_repo} gitlab-shell && git checkout ${gitlab_shell_repo_branch}
+	git clone ${gitlab_shell_repo} gitlab-shell && cd gitlab-shell && git checkout ${gitlab_shell_repo_branch}
 
 

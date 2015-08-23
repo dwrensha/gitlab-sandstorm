@@ -15,7 +15,6 @@ etc/redis.conf
 etc/ssl/cert.pem
 etc/ssl/certs/ca-certificates.crt
 gitlab
-gitlab-shell/VERSION
 gitlab-shell/bin/gitlab-projects
 gitlab-shell/config.yml
 gitlab-shell/hooks/post-receive
@@ -248,6 +247,7 @@ gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/renderer/templat
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/rendering.rb
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/routing_url_for.rb
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/template.rb
+gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/template/error.rb
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/template/handlers.rb
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/template/handlers/builder.rb
 gitlab/.bundle/ruby/2.1.0/gems/actionview-4.1.1/lib/action_view/template/handlers/erb.rb
@@ -311,6 +311,7 @@ gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.1/lib/active_record/associations
 gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.1/lib/active_record/associations/has_many_association.rb
 gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.1/lib/active_record/associations/has_many_through_association.rb
 gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.1/lib/active_record/associations/has_one_association.rb
+gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.1/lib/active_record/associations/has_one_through_association.rb
 gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.1/lib/active_record/associations/join_dependency.rb
 gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.1/lib/active_record/associations/join_dependency/join_base.rb
 gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.1/lib/active_record/associations/join_dependency/join_part.rb
@@ -561,6 +562,8 @@ gitlab/.bundle/ruby/2.1.0/gems/activesupport-4.1.1/lib/active_support/notificati
 gitlab/.bundle/ruby/2.1.0/gems/activesupport-4.1.1/lib/active_support/notifications/fanout.rb
 gitlab/.bundle/ruby/2.1.0/gems/activesupport-4.1.1/lib/active_support/notifications/instrumenter.rb
 gitlab/.bundle/ruby/2.1.0/gems/activesupport-4.1.1/lib/active_support/number_helper.rb
+gitlab/.bundle/ruby/2.1.0/gems/activesupport-4.1.1/lib/active_support/number_helper/number_converter.rb
+gitlab/.bundle/ruby/2.1.0/gems/activesupport-4.1.1/lib/active_support/number_helper/number_to_delimited_converter.rb
 gitlab/.bundle/ruby/2.1.0/gems/activesupport-4.1.1/lib/active_support/option_merger.rb
 gitlab/.bundle/ruby/2.1.0/gems/activesupport-4.1.1/lib/active_support/ordered_hash.rb
 gitlab/.bundle/ruby/2.1.0/gems/activesupport-4.1.1/lib/active_support/ordered_options.rb
@@ -756,6 +759,7 @@ gitlab/.bundle/ruby/2.1.0/gems/builder-3.2.2/lib/builder/xmlmarkup.rb
 gitlab/.bundle/ruby/2.1.0/gems/carrierwave-0.9.0/lib/carrierwave.rb
 gitlab/.bundle/ruby/2.1.0/gems/carrierwave-0.9.0/lib/carrierwave/compatibility/paperclip.rb
 gitlab/.bundle/ruby/2.1.0/gems/carrierwave-0.9.0/lib/carrierwave/error.rb
+gitlab/.bundle/ruby/2.1.0/gems/carrierwave-0.9.0/lib/carrierwave/locale/en.yml
 gitlab/.bundle/ruby/2.1.0/gems/carrierwave-0.9.0/lib/carrierwave/mount.rb
 gitlab/.bundle/ruby/2.1.0/gems/carrierwave-0.9.0/lib/carrierwave/orm/activerecord.rb
 gitlab/.bundle/ruby/2.1.0/gems/carrierwave-0.9.0/lib/carrierwave/processing.rb
@@ -867,6 +871,7 @@ gitlab/.bundle/ruby/2.1.0/gems/coffee-rails-4.0.1/lib/coffee/rails/template_hand
 gitlab/.bundle/ruby/2.1.0/gems/coffee-rails-4.0.1/lib/coffee/rails/version.rb
 gitlab/.bundle/ruby/2.1.0/gems/coffee-script-2.2.0/lib/coffee-script.rb
 gitlab/.bundle/ruby/2.1.0/gems/coffee-script-2.2.0/lib/coffee_script.rb
+gitlab/.bundle/ruby/2.1.0/gems/coffee-script-source-1.6.3/lib/coffee_script/coffee-script.js
 gitlab/.bundle/ruby/2.1.0/gems/coffee-script-source-1.6.3/lib/coffee_script/source.rb
 gitlab/.bundle/ruby/2.1.0/gems/connection_pool-2.1.0/lib/connection_pool.rb
 gitlab/.bundle/ruby/2.1.0/gems/connection_pool-2.1.0/lib/connection_pool/timed_stack.rb
@@ -895,6 +900,7 @@ gitlab/.bundle/ruby/2.1.0/gems/devise-3.2.4/app/mailers
 gitlab/.bundle/ruby/2.1.0/gems/devise-3.2.4/app/mailers/devise
 gitlab/.bundle/ruby/2.1.0/gems/devise-3.2.4/app/mailers/devise/mailer.rb
 gitlab/.bundle/ruby/2.1.0/gems/devise-3.2.4/config/locales
+gitlab/.bundle/ruby/2.1.0/gems/devise-3.2.4/config/locales/en.yml
 gitlab/.bundle/ruby/2.1.0/gems/devise-3.2.4/lib/devise.rb
 gitlab/.bundle/ruby/2.1.0/gems/devise-3.2.4/lib/devise/controllers/helpers.rb
 gitlab/.bundle/ruby/2.1.0/gems/devise-3.2.4/lib/devise/controllers/scoped_views.rb
@@ -994,6 +1000,7 @@ gitlab/.bundle/ruby/2.1.0/gems/execjs-2.0.2/lib/execjs/ruby_racer_runtime.rb
 gitlab/.bundle/ruby/2.1.0/gems/execjs-2.0.2/lib/execjs/ruby_rhino_runtime.rb
 gitlab/.bundle/ruby/2.1.0/gems/execjs-2.0.2/lib/execjs/runtime.rb
 gitlab/.bundle/ruby/2.1.0/gems/execjs-2.0.2/lib/execjs/runtimes.rb
+gitlab/.bundle/ruby/2.1.0/gems/execjs-2.0.2/lib/execjs/support/node_runner.js
 gitlab/.bundle/ruby/2.1.0/gems/execjs-2.0.2/lib/execjs/version.rb
 gitlab/.bundle/ruby/2.1.0/gems/expression_parser-0.9.0/lib/expression_parser.rb
 gitlab/.bundle/ruby/2.1.0/gems/expression_parser-0.9.0/lib/expression_parser/lexer.rb
@@ -1247,6 +1254,7 @@ gitlab/.bundle/ruby/2.1.0/gems/json-1.8.1/lib/json/generic_object.rb
 gitlab/.bundle/ruby/2.1.0/gems/json-1.8.1/lib/json/version.rb
 gitlab/.bundle/ruby/2.1.0/gems/kaminari-0.15.1/app
 gitlab/.bundle/ruby/2.1.0/gems/kaminari-0.15.1/config/locales
+gitlab/.bundle/ruby/2.1.0/gems/kaminari-0.15.1/config/locales/kaminari.yml
 gitlab/.bundle/ruby/2.1.0/gems/kaminari-0.15.1/lib/kaminari.rb
 gitlab/.bundle/ruby/2.1.0/gems/kaminari-0.15.1/lib/kaminari/config.rb
 gitlab/.bundle/ruby/2.1.0/gems/kaminari-0.15.1/lib/kaminari/engine.rb
@@ -2065,10 +2073,12 @@ gitlab/.bundle/ruby/2.1.0/gems/state_machine-1.2.0/lib/state_machine/initializer
 gitlab/.bundle/ruby/2.1.0/gems/state_machine-1.2.0/lib/state_machine/integrations
 gitlab/.bundle/ruby/2.1.0/gems/state_machine-1.2.0/lib/state_machine/integrations.rb
 gitlab/.bundle/ruby/2.1.0/gems/state_machine-1.2.0/lib/state_machine/integrations/active_model.rb
+gitlab/.bundle/ruby/2.1.0/gems/state_machine-1.2.0/lib/state_machine/integrations/active_model/locale.rb
 gitlab/.bundle/ruby/2.1.0/gems/state_machine-1.2.0/lib/state_machine/integrations/active_model/observer.rb
 gitlab/.bundle/ruby/2.1.0/gems/state_machine-1.2.0/lib/state_machine/integrations/active_model/observer_update.rb
 gitlab/.bundle/ruby/2.1.0/gems/state_machine-1.2.0/lib/state_machine/integrations/active_model/versions.rb
 gitlab/.bundle/ruby/2.1.0/gems/state_machine-1.2.0/lib/state_machine/integrations/active_record.rb
+gitlab/.bundle/ruby/2.1.0/gems/state_machine-1.2.0/lib/state_machine/integrations/active_record/locale.rb
 gitlab/.bundle/ruby/2.1.0/gems/state_machine-1.2.0/lib/state_machine/integrations/active_record/versions.rb
 gitlab/.bundle/ruby/2.1.0/gems/state_machine-1.2.0/lib/state_machine/integrations/base.rb
 gitlab/.bundle/ruby/2.1.0/gems/state_machine-1.2.0/lib/state_machine/integrations/data_mapper.rb
@@ -2819,6 +2829,7 @@ gitlab/app/views/profiles/emails/index.html.haml
 gitlab/app/views/profiles/show.html.haml
 gitlab/app/views/projects
 gitlab/app/views/projects/_commit_button.html.haml
+gitlab/app/views/projects/_dropdown.html.haml
 gitlab/app/views/projects/_home_panel.html.haml
 gitlab/app/views/projects/_md_preview.html.haml
 gitlab/app/views/projects/_zen.html.haml
