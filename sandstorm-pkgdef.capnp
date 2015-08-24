@@ -8,9 +8,9 @@ const pkgdef :Spk.PackageDefinition = (
 
   manifest = (
 
-    appVersion = 1,  # Increment this for every release.
+    appVersion = 2,  # Increment this for every release.
     appTitle = (defaultText = "GitLab"),
-    appMarketingVersion = (defaultText = "2015.8.23"),
+    appMarketingVersion = (defaultText = "2015.8.23 (7.8)"),
 
     metadata = (
       icons = (
@@ -68,7 +68,7 @@ const pkgdef :Spk.PackageDefinition = (
 
   alwaysInclude = ["gitlab/vendor", "gitlab/.bundle", "gitlab/app", "gitlab/config", "gitlab/public",
                    "gitlab/read-only-cache",
-                   "gitlab-shell/vendor", "gitlab-shell/hooks", "gitlab-shell/lib",
+                   "gitlab-shell/hooks", "gitlab-shell/lib",
                    "usr/bin/node"],
 
   bridgeConfig = (
