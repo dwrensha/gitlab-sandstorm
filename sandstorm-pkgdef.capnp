@@ -29,13 +29,14 @@ const pkgdef :Spk.PackageDefinition = (
        ),
        pgpKeyring = embed "pgp-keyring",
        description = (defaultText = embed "description.md"),
+       shortDescription = (defaultText = "Git hosting"),
        screenshots = [(width = 448, height = 281, png = embed "screenshot.png")],
        changeLog = (defaultText = embed "changeLog.md"),
      ),
 
     actions = [
       ( title = (defaultText = "New GitLab Repository"),
-        nounPhrase = (defaultText = "GitLab Repository"),
+        nounPhrase = (defaultText = "repository"),
         command = .startCommand
       )
     ],
