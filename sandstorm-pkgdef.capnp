@@ -54,8 +54,9 @@ const pkgdef :Spk.PackageDefinition = (
         hidePaths = ["gitlab/.git", ".git",
                      "gitlab/.bundle/ruby/2.1.0/cache",
                      "gitlab/app/controllers/oauth",
-                     "gitlab/app/models/project_services"]
+                     ]
       ),
+      #      ( sourcePath = "/home/david/.nvm/v0.10.36/bin/node", packagePath = "usr/bin/node"),
       ( sourcePath = "/",    # Then search the system root directory.
         hidePaths = ["home", "proc", "sys", "etc/nsswitch.conf", "etc/localtime",
                      "etc/host.conf", "etc/resolv.conf",

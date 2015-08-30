@@ -13,7 +13,7 @@ gitlab/.git:
 	git clone ${gitlab_repo} gitlab && cd gitlab && git checkout ${gitlab_repo_branch}
 
 gitlab/.bundle:
-	cd gitlab && bundle install --path .bundle --without test development --jobs 4 --standalone
+	cd gitlab && bundle install --path .bundle --without test development --jobs 1 --standalone
 
 initdb.sqlite3: gitlab/.bundle
 	rm -rf db
