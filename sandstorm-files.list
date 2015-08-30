@@ -350,7 +350,6 @@ gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.11/lib/active_record/association
 gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.11/lib/active_record/associations/has_many_association.rb
 gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.11/lib/active_record/associations/has_many_through_association.rb
 gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.11/lib/active_record/associations/has_one_association.rb
-gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.11/lib/active_record/associations/has_one_through_association.rb
 gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.11/lib/active_record/associations/join_dependency.rb
 gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.11/lib/active_record/associations/join_dependency/join_association.rb
 gitlab/.bundle/ruby/2.1.0/gems/activerecord-4.1.11/lib/active_record/associations/join_dependency/join_base.rb
@@ -1575,6 +1574,7 @@ gitlab/.bundle/ruby/2.1.0/gems/rack-1.5.5/lib/rack/lock.rb
 gitlab/.bundle/ruby/2.1.0/gems/rack-1.5.5/lib/rack/methodoverride.rb
 gitlab/.bundle/ruby/2.1.0/gems/rack-1.5.5/lib/rack/mime.rb
 gitlab/.bundle/ruby/2.1.0/gems/rack-1.5.5/lib/rack/multipart.rb
+gitlab/.bundle/ruby/2.1.0/gems/rack-1.5.5/lib/rack/multipart/parser.rb
 gitlab/.bundle/ruby/2.1.0/gems/rack-1.5.5/lib/rack/request.rb
 gitlab/.bundle/ruby/2.1.0/gems/rack-1.5.5/lib/rack/response.rb
 gitlab/.bundle/ruby/2.1.0/gems/rack-1.5.5/lib/rack/runtime.rb
@@ -2708,6 +2708,7 @@ gitlab/app/models/protected_branch.rb
 gitlab/app/models/repository.rb
 gitlab/app/models/service.rb
 gitlab/app/models/snippet.rb
+gitlab/app/models/subscription.rb
 gitlab/app/models/tree.rb
 gitlab/app/models/user.rb
 gitlab/app/models/users_star_project.rb
@@ -2759,6 +2760,7 @@ gitlab/app/services/notification_service.rb
 gitlab/app/services/oauth2
 gitlab/app/services/oauth2/access_token_validation_service.rb
 gitlab/app/services/projects
+gitlab/app/services/projects/autocomplete_service.rb
 gitlab/app/services/projects/create_service.rb
 gitlab/app/services/projects/destroy_service.rb
 gitlab/app/services/projects/fork_service.rb
@@ -2886,6 +2888,8 @@ gitlab/app/views/projects/compare
 gitlab/app/views/projects/compare/_form.html.haml
 gitlab/app/views/projects/compare/index.html.haml
 gitlab/app/views/projects/compare/show.html.haml
+gitlab/app/views/projects/deploy_keys
+gitlab/app/views/projects/deploy_keys/index.html.haml
 gitlab/app/views/projects/diffs
 gitlab/app/views/projects/diffs/_diffs.html.haml
 gitlab/app/views/projects/diffs/_file.html.haml
@@ -2910,10 +2914,14 @@ gitlab/app/views/projects/issues/index.html.haml
 gitlab/app/views/projects/issues/new.html.haml
 gitlab/app/views/projects/issues/show.html.haml
 gitlab/app/views/projects/labels
+gitlab/app/views/projects/labels/_form.html.haml
+gitlab/app/views/projects/labels/_label.html.haml
 gitlab/app/views/projects/labels/index.html.haml
+gitlab/app/views/projects/labels/new.html.haml
 gitlab/app/views/projects/merge_requests
 gitlab/app/views/projects/merge_requests/_discussion.html.haml
 gitlab/app/views/projects/merge_requests/_merge_request.html.haml
+gitlab/app/views/projects/merge_requests/_merge_requests.html.haml
 gitlab/app/views/projects/merge_requests/_new_compare.html.haml
 gitlab/app/views/projects/merge_requests/_new_submit.html.haml
 gitlab/app/views/projects/merge_requests/_show.html.haml
@@ -2934,9 +2942,11 @@ gitlab/app/views/projects/network
 gitlab/app/views/projects/network/_head.html.haml
 gitlab/app/views/projects/network/show.html.haml
 gitlab/app/views/projects/network/show.json.erb
+gitlab/app/views/projects/new.html.haml
 gitlab/app/views/projects/notes
 gitlab/app/views/projects/notes/_diff_notes_with_reply.html.haml
 gitlab/app/views/projects/notes/_form.html.haml
+gitlab/app/views/projects/notes/_hints.html.haml
 gitlab/app/views/projects/notes/_note.html.haml
 gitlab/app/views/projects/notes/_notes.html.haml
 gitlab/app/views/projects/notes/_notes_with_form.html.haml
@@ -2982,7 +2992,9 @@ gitlab/app/views/shared/_ref_switcher.html.haml
 gitlab/app/views/shared/_show_aside.html.haml
 gitlab/app/views/shared/_sort_dropdown.html.haml
 gitlab/app/views/shared/issuable
+gitlab/app/views/shared/issuable/_context.html.haml
 gitlab/app/views/shared/issuable/_filter.html.haml
+gitlab/app/views/shared/issuable/_form.html.haml
 gitlab/app/views/shared/issuable/_search_form.html.haml
 gitlab/app/views/users
 gitlab/app/views/users/_groups.html.haml
@@ -3174,6 +3186,18 @@ gitlab/public/assets/application-808894adf4d7ba01c45449e9e0919f78.css
 gitlab/public/assets/application-8a9eee54728a87bfa6f5e0758446b011.js
 gitlab/public/assets/application-90283bf48d5eaf1c348d65ab30d7eb6f.js
 gitlab/public/assets/application-c2b25b634e9c65d2d20f32b449f802f6.js
+gitlab/public/assets/emoji/0023-20E3-cec6cb6dada7a6ec1b9812fc53827c64.png
+gitlab/public/assets/emoji/0030-20E3-d4654b2ab04a38b0e9fbd1802a0e9618.png
+gitlab/public/assets/emoji/0031-20E3-2f73d2532ad765617415854bc9a9c118.png
+gitlab/public/assets/emoji/0032-20E3-53036d6c0950d8c534f935a126f71976.png
+gitlab/public/assets/emoji/0033-20E3-ced5d0e33c61adc7a58ec71224d7019f.png
+gitlab/public/assets/emoji/1F1F9-1F1F2-4f8eecb1e38c734fec57968f56ac92a1.png
+gitlab/public/assets/emoji/1F44D-2c28339030b14c4f80202e3def4c8874.png
+gitlab/public/assets/emoji/1F44E-efcc8ab828082b715d2356378524d42d.png
+gitlab/public/assets/emoji/1F4AF-4bb284eb88b252a86650a9466f80af85.png
+gitlab/public/assets/emoji/1F522-d2bebbb63592f899459ebeff949deb01.png
+gitlab/public/assets/emoji/260E-03882b741af43499ebf1275821966856.png
+gitlab/public/assets/emoji/2649-48f4459c789104103d5368be3e30e08a.png
 gitlab/public/assets/fontawesome-webfont-5639461111244044e4207f6b8d0d10d4.woff
 gitlab/public/assets/fontawesome-webfont-b4162ecf90a4889ff3ed2f5dff4e2baa.woff2
 gitlab/public/assets/fontawesome-webfont-e141353bd11df35ab4e556fd7e1eddb2.woff
@@ -3187,6 +3211,7 @@ gitlab/public/assets/logo-white-96c5cdf684c799df72c830d36ecc7fec.png
 gitlab/public/assets/manifest-dbd5f58ab936baf5690436d9f554841a.json
 gitlab/public/assets/print-1df3ea9b8ff148a6745321899e0cb213.css
 gitlab/public/assets/print-47fe51cdf70398e5e54b544e0f5cc718.css
+gitlab/public/assets/select2x2-020575639d993f0c644f7c68d65b8e6e.png
 gitlab/public/assets/select2x2-3fa53aca7e2507446a2d5117e6a6f582.png
 gitlab/public/assets/webkey-607a788dbf52ec7ac4f1d5abaaaa3b36.png
 gitlab/public/favicon.ico
@@ -3235,6 +3260,7 @@ usr/bin/readlink
 usr/bin/rm
 usr/bin/sh
 usr/bin/sort
+usr/bin/strace
 usr/bin/stty
 usr/bin/sysctl
 usr/bin/tput
@@ -3307,6 +3333,12 @@ usr/lib/libssl.so.1.0.0
 usr/lib/libstdc++.so.6
 usr/lib/libstdc++.so.6.0.21
 usr/lib/libsystemd.so.0
+usr/lib/libunwind-ptrace.so.0
+usr/lib/libunwind-ptrace.so.0.0.0
+usr/lib/libunwind-x86_64.so.8
+usr/lib/libunwind-x86_64.so.8.0.1
+usr/lib/libunwind.so.8
+usr/lib/libunwind.so.8.0.1
 usr/lib/libyaml-0.so.2
 usr/lib/libyaml-0.so.2.0.4
 usr/lib/libz.so.1
@@ -3833,6 +3865,7 @@ usr/local/rbenv/versions/2.1.6/lib/ruby/2.1.0/uri/https.rb
 usr/local/rbenv/versions/2.1.6/lib/ruby/2.1.0/uri/ldap.rb
 usr/local/rbenv/versions/2.1.6/lib/ruby/2.1.0/uri/ldaps.rb
 usr/local/rbenv/versions/2.1.6/lib/ruby/2.1.0/uri/mailto.rb
+usr/local/rbenv/versions/2.1.6/lib/ruby/2.1.0/weakref.rb
 usr/local/rbenv/versions/2.1.6/lib/ruby/2.1.0/webrick.rb
 usr/local/rbenv/versions/2.1.6/lib/ruby/2.1.0/webrick/accesslog.rb
 usr/local/rbenv/versions/2.1.6/lib/ruby/2.1.0/webrick/compat.rb

@@ -56,7 +56,6 @@ const pkgdef :Spk.PackageDefinition = (
                      "gitlab/app/controllers/oauth",
                      ]
       ),
-      #      ( sourcePath = "/home/david/.nvm/v0.10.36/bin/node", packagePath = "usr/bin/node"),
       ( sourcePath = "/",    # Then search the system root directory.
         hidePaths = ["home", "proc", "sys", "etc/nsswitch.conf", "etc/localtime",
                      "etc/host.conf", "etc/resolv.conf",
