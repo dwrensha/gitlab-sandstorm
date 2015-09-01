@@ -2969,6 +2969,7 @@ gitlab/app/views/projects/commits/_commit_list.html.haml
 gitlab/app/views/projects/commits/_commits.html.haml
 gitlab/app/views/projects/commits/_head.html.haml
 gitlab/app/views/projects/commits/_inline_commit.html.haml
+gitlab/app/views/projects/commits/show.atom.builder
 gitlab/app/views/projects/commits/show.html.haml
 gitlab/app/views/projects/compare
 gitlab/app/views/projects/compare/_form.html.haml
@@ -3024,7 +3025,12 @@ gitlab/app/views/projects/merge_requests/show/_mr_box.html.haml
 gitlab/app/views/projects/merge_requests/show/_mr_title.html.haml
 gitlab/app/views/projects/merge_requests/show/_participants.html.haml
 gitlab/app/views/projects/milestones
+gitlab/app/views/projects/milestones/_form.html.haml
+gitlab/app/views/projects/milestones/_issues.html.haml
+gitlab/app/views/projects/milestones/_merge_requests.html.haml
 gitlab/app/views/projects/milestones/index.html.haml
+gitlab/app/views/projects/milestones/new.html.haml
+gitlab/app/views/projects/milestones/show.html.haml
 gitlab/app/views/projects/network
 gitlab/app/views/projects/network/_head.html.haml
 gitlab/app/views/projects/network/show.html.haml
@@ -3067,6 +3073,7 @@ gitlab/app/views/projects/wikis/_nav.html.haml
 gitlab/app/views/projects/wikis/_new.html.haml
 gitlab/app/views/projects/wikis/edit.html.haml
 gitlab/app/views/projects/wikis/git_access.html.haml
+gitlab/app/views/projects/wikis/pages.html.haml
 gitlab/app/views/projects/wikis/show.html.haml
 gitlab/app/views/shared
 gitlab/app/views/shared/_clone_panel.html.haml
@@ -3307,6 +3314,7 @@ gitlab/public/assets/icon-search-1aee2102ac9ef7c077acce219d346074.png
 gitlab/public/assets/icon-search-ef72361b253d3542782992fbe8713b27.png
 gitlab/public/assets/jquery-ui/ui-bg_flat_75_ffffff_40x100-4522b2929018ca88e37ab8c877107822.png
 gitlab/public/assets/jquery-ui/ui-bg_flat_75_ffffff_40x100-d20cf782ea2d212335fa15f2ecb5e412.png
+gitlab/public/assets/jquery-ui/ui-icons_222222_256x240-c9d45cbe79fa6dab691c8b7438a5c815.png
 gitlab/public/assets/logo-ca207549507c811d027110077cf86e90.svg
 gitlab/public/assets/logo-white-96c5cdf684c799df72c830d36ecc7fec.png
 gitlab/public/assets/manifest-dbd5f58ab936baf5690436d9f554841a.json
