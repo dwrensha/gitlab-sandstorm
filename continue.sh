@@ -1,6 +1,6 @@
 export SECRET_KEY_BASE=`base64 /dev/urandom | head -c 30`
 
-set -x
+set -x -e
 
 redis-server /etc/redis.conf &
 echo "started redis-server: " $?
@@ -10,6 +10,18 @@ export SSH_CONNECTION=12345 # gitlab-shell wants this variable to be set. Any va
 cd gitlab
 
 export GEM_HOME=/gitlab/.bundle/ruby/2.1.0
+
+
+if [ -f /var/migrations/20150818213832 ]
+then
+    echo "no migration necessary"
+else
+   RAILS_ENV=production ./bin/rake db:migrate
+   mkdir -p /var/migrations/
+   touch /var/migrations/20150818213832
+fi
+
+
 RUBYOPT=-r/gitlab/.bundle/bundler/setup RAILS_ENV=production ./.bundle/ruby/2.1.0/bin/sidekiq -q post_receive -q default -q archive_repo 2>&1 | awk '{print "sidekiq: " $0}' &
 ./bin/rails server -p 10000 -e production
 
