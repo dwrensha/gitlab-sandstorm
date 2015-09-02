@@ -23,7 +23,11 @@ fi
 
 
 RUBYOPT=-r/gitlab/.bundle/bundler/setup RAILS_ENV=production ./.bundle/ruby/2.1.0/bin/sidekiq -q post_receive -q default -q archive_repo 2>&1 | awk '{print "sidekiq: " $0}' &
-./bin/rails server -p 10000 -e production
+#RUBYOPT=-r/gitlab/.bundle/bundler/setup RAILS_ENV=production ./.bundle/ruby/2.1.0/bin/thin --threaded -V -p 10000 -e production start
+#./bin/rails server thin -p 10000 -e production -c config/thin.yml
+RUBYOPT=-r/gitlab/.bundle/bundler/setup RAILS_ENV=production ./.bundle/ruby/2.1.0/bin/unicorn_rails -p 10000 -E production -c /gitlab/config/unicorn.sandstorm.rb
+
+#sleep infinity
 
 
 
