@@ -1013,6 +1013,7 @@ gitlab/.bundle/ruby/2.1.0/gems/devise-3.2.4/lib/devise/models/trackable.rb
 gitlab/.bundle/ruby/2.1.0/gems/devise-3.2.4/lib/devise/models/validatable.rb
 gitlab/.bundle/ruby/2.1.0/gems/devise-3.2.4/lib/devise/modules.rb
 gitlab/.bundle/ruby/2.1.0/gems/devise-3.2.4/lib/devise/orm/active_record.rb
+gitlab/.bundle/ruby/2.1.0/gems/devise-3.2.4/lib/devise/parameter_sanitizer.rb
 gitlab/.bundle/ruby/2.1.0/gems/devise-3.2.4/lib/devise/rails.rb
 gitlab/.bundle/ruby/2.1.0/gems/devise-3.2.4/lib/devise/rails/routes.rb
 gitlab/.bundle/ruby/2.1.0/gems/devise-3.2.4/lib/devise/rails/warden_compat.rb
@@ -2972,6 +2973,7 @@ gitlab/app/views/doorkeeper/authorizations
 gitlab/app/views/doorkeeper/authorized_applications
 gitlab/app/views/email_rejection_mailer
 gitlab/app/views/errors
+gitlab/app/views/errors/access_denied.html.haml
 gitlab/app/views/events
 gitlab/app/views/events/_commit.html.haml
 gitlab/app/views/events/_event.html.haml
@@ -3025,10 +3027,12 @@ gitlab/app/views/layouts/admin.html.haml
 gitlab/app/views/layouts/application.html.haml
 gitlab/app/views/layouts/dashboard.html.haml
 gitlab/app/views/layouts/devise.html.haml
+gitlab/app/views/layouts/errors.html.haml
 gitlab/app/views/layouts/explore.html.haml
 gitlab/app/views/layouts/group.html.haml
 gitlab/app/views/layouts/header
 gitlab/app/views/layouts/header/_default.html.haml
+gitlab/app/views/layouts/header/_empty.html.haml
 gitlab/app/views/layouts/help.html.haml
 gitlab/app/views/layouts/nav
 gitlab/app/views/layouts/nav/_dashboard.html.haml
@@ -3046,6 +3050,8 @@ gitlab/app/views/notify/group_access_granted_email.html.haml
 gitlab/app/views/notify/group_access_granted_email.text.erb
 gitlab/app/views/notify/new_user_email.html.haml
 gitlab/app/views/notify/new_user_email.text.erb
+gitlab/app/views/notify/project_access_granted_email.html.haml
+gitlab/app/views/notify/project_access_granted_email.text.erb
 gitlab/app/views/profiles
 gitlab/app/views/profiles/_event_table.html.haml
 gitlab/app/views/profiles/accounts
@@ -3159,7 +3165,12 @@ gitlab/app/views/projects/merge_requests/show/_mr_box.html.haml
 gitlab/app/views/projects/merge_requests/show/_mr_title.html.haml
 gitlab/app/views/projects/merge_requests/show/_participants.html.haml
 gitlab/app/views/projects/merge_requests/widget
+gitlab/app/views/projects/merge_requests/widget/_heading.html.haml
+gitlab/app/views/projects/merge_requests/widget/_open.html.haml
+gitlab/app/views/projects/merge_requests/widget/_show.html.haml
 gitlab/app/views/projects/merge_requests/widget/open
+gitlab/app/views/projects/merge_requests/widget/open/_check.html.haml
+gitlab/app/views/projects/merge_requests/widget/open/_conflicts.html.haml
 gitlab/app/views/projects/milestones
 gitlab/app/views/projects/milestones/_form.html.haml
 gitlab/app/views/projects/milestones/_issues.html.haml
@@ -3185,9 +3196,13 @@ gitlab/app/views/projects/notes/discussions
 gitlab/app/views/projects/project_members
 gitlab/app/views/projects/project_members/_group_members.html.haml
 gitlab/app/views/projects/project_members/_new_project_member.html.haml
+gitlab/app/views/projects/project_members/_project_member.html.haml
 gitlab/app/views/projects/project_members/_team.html.haml
+gitlab/app/views/projects/project_members/import.html.haml
 gitlab/app/views/projects/project_members/index.html.haml
 gitlab/app/views/projects/protected_branches
+gitlab/app/views/projects/protected_branches/_branches_list.html.haml
+gitlab/app/views/projects/protected_branches/index.html.haml
 gitlab/app/views/projects/refs
 gitlab/app/views/projects/refs/logs_tree.js.haml
 gitlab/app/views/projects/repositories
@@ -3373,6 +3388,7 @@ gitlab/db/migrate/20150818213832_add_sent_notifications.rb
 gitlab/db/migrate/limits_to_mysql.rb
 gitlab/db/schema.rb
 gitlab/doc/README.md
+gitlab/doc/permissions/permissions.md
 gitlab/doc/web_hooks/web_hooks.md
 gitlab/lib
 gitlab/lib/api
@@ -3450,6 +3466,7 @@ gitlab/lib/gitlab/middleware
 gitlab/lib/gitlab/middleware/static.rb
 gitlab/lib/gitlab/note_data_builder.rb
 gitlab/lib/gitlab/o_auth
+gitlab/lib/gitlab/o_auth/provider.rb
 gitlab/lib/gitlab/popen.rb
 gitlab/lib/gitlab/production_logger.rb
 gitlab/lib/gitlab/project_search_results.rb
@@ -3547,6 +3564,7 @@ gitlab/public/assets/emoji/1F4AF-4bb284eb88b252a86650a9466f80af85.png
 gitlab/public/assets/emoji/1F522-d2bebbb63592f899459ebeff949deb01.png
 gitlab/public/assets/emoji/260E-03882b741af43499ebf1275821966856.png
 gitlab/public/assets/emoji/2649-48f4459c789104103d5368be3e30e08a.png
+gitlab/public/assets/favicon-5738a6efe01f3282080df5f467da72a9.ico
 gitlab/public/assets/fontawesome-webfont-5639461111244044e4207f6b8d0d10d4.woff
 gitlab/public/assets/fontawesome-webfont-b4162ecf90a4889ff3ed2f5dff4e2baa.woff2
 gitlab/public/assets/fontawesome-webfont-e141353bd11df35ab4e556fd7e1eddb2.woff
@@ -3563,6 +3581,7 @@ gitlab/public/assets/manifest-dbd5f58ab936baf5690436d9f554841a.json
 gitlab/public/assets/monokai-scheme-preview-fc918e4ce2dbbeae072a42136e5f85ed.png
 gitlab/public/assets/print-1df3ea9b8ff148a6745321899e0cb213.css
 gitlab/public/assets/print-47fe51cdf70398e5e54b544e0f5cc718.css
+gitlab/public/assets/select2-spinner-eb68c4751c759d9966fc7c74b11865fb.gif
 gitlab/public/assets/select2x2-020575639d993f0c644f7c68d65b8e6e.png
 gitlab/public/assets/select2x2-3fa53aca7e2507446a2d5117e6a6f582.png
 gitlab/public/assets/solarized-dark-scheme-preview-c620144dbe4e5359d87391091b03e038.png

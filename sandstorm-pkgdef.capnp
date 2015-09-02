@@ -74,11 +74,46 @@ const pkgdef :Spk.PackageDefinition = (
 
   bridgeConfig = (
     viewInfo = (
-       permissions = [(name = "admin")]
+       permissions = [(name = "owner", title = (defaultText = "owner"),
+                       description =
+                        (defaultText = "A vestigal permission only useful outside of Sandstorm.")),
+                      (name = "master", title = (defaultText = "master"),
+                       description = (defaultText = "A master can push to any branch.")),
+                      (name = "developer", title = (defaultText = "developer"),
+                       description = (defaultText = "A developer can create merge requests.")),
+                      (name = "reporter", title = (defaultText = "reporter"),
+                       description =
+                        (defaultText = "A reporter can view the code and manage the issue tracker.")),
+                      (name = "guest", title = (defaultText = "guest"),
+                      description = (defaultText = "A guest can create new issues and leave comments."))
+                      ],
+       roles = [
+                (title = (defaultText = "master"),
+                 verbPhrase = (defaultText = "can push to any branch"),
+                 permissions = .masterPermissions,
+                 default = true),
+                (title = (defaultText = "developer"),
+                 verbPhrase = (defaultText = "can create merge requests"),
+                 permissions = .developerPermissions),
+                (title = (defaultText = "reporter"),
+                 verbPhrase = (defaultText = "can view and pull code"),
+                 permissions = .reporterPermissions),
+                (title = (defaultText = "guest"),
+                 verbPhrase = (defaultText = "can create new issues"),
+                 permissions = .guestPermissions)
+                ]
+
     )
   )
 
 );
+
+#                                        admin, master, dev,  report, guest
+const ownerPermissions     :List(Bool) = [true,   true,  true,  true,  true];
+const masterPermissions    :List(Bool) = [false,  true,  true,  true,  true];
+const developerPermissions :List(Bool) = [false, false,  true,  true,  true];
+const reporterPermissions  :List(Bool) = [false, false, false,  true,  true];
+const guestPermissions     :List(Bool) = [false, false, false, false,  true];
 
 const commandEnvironment : List(Util.KeyValue) =
   [
