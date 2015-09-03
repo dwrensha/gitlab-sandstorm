@@ -1481,6 +1481,7 @@ gitlab/.bundle/ruby/2.1.0/gems/mail-2.6.3/lib/mail/fields/in_reply_to_field.rb
 gitlab/.bundle/ruby/2.1.0/gems/mail-2.6.3/lib/mail/fields/keywords_field.rb
 gitlab/.bundle/ruby/2.1.0/gems/mail-2.6.3/lib/mail/fields/message_id_field.rb
 gitlab/.bundle/ruby/2.1.0/gems/mail-2.6.3/lib/mail/fields/mime_version_field.rb
+gitlab/.bundle/ruby/2.1.0/gems/mail-2.6.3/lib/mail/fields/optional_field.rb
 gitlab/.bundle/ruby/2.1.0/gems/mail-2.6.3/lib/mail/fields/received_field.rb
 gitlab/.bundle/ruby/2.1.0/gems/mail-2.6.3/lib/mail/fields/references_field.rb
 gitlab/.bundle/ruby/2.1.0/gems/mail-2.6.3/lib/mail/fields/reply_to_field.rb
@@ -3160,12 +3161,18 @@ gitlab/app/views/layouts/project_settings.html.haml
 gitlab/app/views/layouts/search.html.haml
 gitlab/app/views/layouts/snippets.html.haml
 gitlab/app/views/notify
+gitlab/app/views/notify/_reassigned_issuable_email.html.haml
+gitlab/app/views/notify/_reassigned_issuable_email.text.erb
 gitlab/app/views/notify/group_access_granted_email.html.haml
 gitlab/app/views/notify/group_access_granted_email.text.erb
+gitlab/app/views/notify/new_issue_email.html.haml
+gitlab/app/views/notify/new_issue_email.text.erb
 gitlab/app/views/notify/new_user_email.html.haml
 gitlab/app/views/notify/new_user_email.text.erb
 gitlab/app/views/notify/project_access_granted_email.html.haml
 gitlab/app/views/notify/project_access_granted_email.text.erb
+gitlab/app/views/notify/reassigned_issue_email.html.haml
+gitlab/app/views/notify/reassigned_issue_email.text.erb
 gitlab/app/views/profiles
 gitlab/app/views/profiles/_event_table.html.haml
 gitlab/app/views/profiles/accounts
@@ -3255,6 +3262,7 @@ gitlab/app/views/projects/issues/_issues.html.haml
 gitlab/app/views/projects/issues/index.html.haml
 gitlab/app/views/projects/issues/new.html.haml
 gitlab/app/views/projects/issues/show.html.haml
+gitlab/app/views/projects/issues/update.js.haml
 gitlab/app/views/projects/labels
 gitlab/app/views/projects/labels/_form.html.haml
 gitlab/app/views/projects/labels/_label.html.haml
@@ -3270,6 +3278,7 @@ gitlab/app/views/projects/merge_requests/_show.html.haml
 gitlab/app/views/projects/merge_requests/branch_from.js.haml
 gitlab/app/views/projects/merge_requests/branch_to.js.haml
 gitlab/app/views/projects/merge_requests/index.html.haml
+gitlab/app/views/projects/merge_requests/merge.js.haml
 gitlab/app/views/projects/merge_requests/new.html.haml
 gitlab/app/views/projects/merge_requests/show
 gitlab/app/views/projects/merge_requests/show.html.haml
@@ -3280,9 +3289,11 @@ gitlab/app/views/projects/merge_requests/show/_mr_title.html.haml
 gitlab/app/views/projects/merge_requests/show/_participants.html.haml
 gitlab/app/views/projects/merge_requests/widget
 gitlab/app/views/projects/merge_requests/widget/_heading.html.haml
+gitlab/app/views/projects/merge_requests/widget/_merged.html.haml
 gitlab/app/views/projects/merge_requests/widget/_open.html.haml
 gitlab/app/views/projects/merge_requests/widget/_show.html.haml
 gitlab/app/views/projects/merge_requests/widget/open
+gitlab/app/views/projects/merge_requests/widget/open/_accept.html.haml
 gitlab/app/views/projects/merge_requests/widget/open/_check.html.haml
 gitlab/app/views/projects/merge_requests/widget/open/_conflicts.html.haml
 gitlab/app/views/projects/milestones
@@ -3725,6 +3736,7 @@ gitlab/public/assets/logo-ca207549507c811d027110077cf86e90.svg
 gitlab/public/assets/logo-white-96c5cdf684c799df72c830d36ecc7fec.png
 gitlab/public/assets/manifest-dbd5f58ab936baf5690436d9f554841a.json
 gitlab/public/assets/monokai-scheme-preview-fc918e4ce2dbbeae072a42136e5f85ed.png
+gitlab/public/assets/no_avatar-0b64d25ac5f63e6f0caee99e819105ba.png
 gitlab/public/assets/no_group_avatar-7593f7fb9461d2ab8c9f62f4e055f021.png
 gitlab/public/assets/print-1df3ea9b8ff148a6745321899e0cb213.css
 gitlab/public/assets/print-47fe51cdf70398e5e54b544e0f5cc718.css
