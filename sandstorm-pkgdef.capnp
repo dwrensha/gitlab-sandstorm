@@ -50,6 +50,7 @@ const pkgdef :Spk.PackageDefinition = (
     # automatically by running it on a FUSE filesystem. So, the mappings
     # here are only to tell it where to find files that the app wants.
     searchPath = [
+      (sourcePath = "schema.rb", packagePath = "gitlab/db/schema.rb"),
       ( sourcePath = ".", # Search this directory first.
         hidePaths = ["gitlab/.git", ".git",
                      "gitlab/.bundle/ruby/2.1.0/cache",

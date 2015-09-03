@@ -17,14 +17,11 @@ gitlab/.bundle:
 
 initdb.sqlite3: gitlab/.bundle
 	rm -rf db
-#	rm -f gitlab/db/schema.rb
 	mkdir db
 	find gitlab/.bundle -type f -name "jquery.atwho.js" -exec sed -i 's/@ sourceMappingURL=jquery.caret.map//g' {} \;
 	cd gitlab && SECRET_KEY_BASE='not so secret' RAILS_ENV=production ./bin/rake db:create db:setup && SECRET_KEY_BASE='not so secret' RAILS_ENV=production ./bin/rake assets:precompile
 	mv db/db.sqlite3 initdb.sqlite3
 	rm -rf db
-#	rm -f gitlab/db/schema.rb
-#	ln -s /var/schema.rb gitlab/db/schema.rb
 	ln -s /var/sqlite3 db
 
 # Set up gitlab-shell
