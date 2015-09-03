@@ -8,9 +8,9 @@ const pkgdef :Spk.PackageDefinition = (
 
   manifest = (
 
-    appVersion = 2,  # Increment this for every release.
+    appVersion = 3,  # Increment this for every release.
     appTitle = (defaultText = "GitLab"),
-    appMarketingVersion = (defaultText = "2015.8.23 (7.8)"),
+    appMarketingVersion = (defaultText = "2015.09.02 (7.14)"),
 
     metadata = (
       icons = (
@@ -103,7 +103,6 @@ const pkgdef :Spk.PackageDefinition = (
                  verbPhrase = (defaultText = "can create new issues"),
                  permissions = .guestPermissions)
                 ]
-
     )
   )
 

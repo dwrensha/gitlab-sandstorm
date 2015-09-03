@@ -2,6 +2,8 @@ export SECRET_KEY_BASE=`base64 /dev/urandom | head -c 30`
 
 set -x -e
 
+base64 /dev/urandom | head -c 30 > /var/gitlab_shell_secret
+
 redis-server /etc/redis.conf &
 echo "started redis-server: " $?
 
