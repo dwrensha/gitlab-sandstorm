@@ -13,6 +13,7 @@ export RBENV_ROOT=/opt/ruby/rbenv
 eval "$(rbenv init -)"
 
 rbenv install 2.1.6
+rbenv shell 2.1.6
 
 gem install bundler
 

@@ -11,7 +11,7 @@ export SSH_CONNECTION=12345 # gitlab-shell wants this variable to be set. Any va
 
 cd gitlab
 
-export GEM_HOME=/gitlab/.bundle/ruby/2.1.0
+export GEM_HOME=/opt/ruby/gitlab-bundle/ruby/2.1.0
 
 if [ -f /var/migrations/20150818213832 ]
 then
