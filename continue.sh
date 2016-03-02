@@ -22,8 +22,8 @@ else
    touch /var/migrations/20150818213832
 fi
 
-RUBYOPT=-r/gitlab/.bundle/bundler/setup RAILS_ENV=production ./.bundle/ruby/2.1.0/bin/sidekiq -q post_receive -q default -q archive_repo 2>&1 | awk '{print "sidekiq: " $0}' &
-RUBYOPT=-r/gitlab/.bundle/bundler/setup RAILS_ENV=production ./.bundle/ruby/2.1.0/bin/unicorn_rails -p 10000 -E production -c /gitlab/config/unicorn.sandstorm.rb
+RUBYOPT=-r/opt/ruby/gitlab-bundle/bundler/setup RAILS_ENV=production /opt/ruby/gitlab-bundle/ruby/2.1.0/bin/sidekiq -q post_receive -q default -q archive_repo 2>&1 | awk '{print "sidekiq: " $0}' &
+RUBYOPT=-r/opt/ruby/gitlab-bundle/bundler/setup RAILS_ENV=production /opt/ruby/gitlab-bundle/ruby/2.1.0/bin/unicorn_rails -p 10000 -E production -c /gitlab/config/unicorn.sandstorm.rb
 
 
 

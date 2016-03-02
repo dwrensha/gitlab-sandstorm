@@ -50,17 +50,17 @@ const pkgdef :Spk.PackageDefinition = (
     # automatically by running it on a FUSE filesystem. So, the mappings
     # here are only to tell it where to find files that the app wants.
     searchPath = [
-      (sourcePath = "schema.rb", packagePath = "gitlab/db/schema.rb"),
-      ( sourcePath = ".", # Search this directory first.
-        hidePaths = ["gitlab/.git", ".git",
-                     "gitlab/.bundle/ruby/2.1.0/cache",
-                     "gitlab/app/controllers/oauth",
+      (sourcePath = "/opt/app/schema.rb", packagePath = "gitlab/db/schema.rb"),
+      ( sourcePath = "/opt/app",
+        hidePaths = ["/opt/app/gitlab/.git", "/opt/app/.git",
+                     "/opt/app/gitlab/app/controllers/oauth",
                      ]
       ),
       ( sourcePath = "/",    # Then search the system root directory.
         hidePaths = ["home", "proc", "sys", "etc/nsswitch.conf", "etc/localtime",
                      "etc/host.conf", "etc/resolv.conf",
-                     "usr/bin/ruby"
+                     "usr/bin/ruby",
+                     "/opt/ruby/gitlab-bundle/ruby/2.1.0/cache",
                         ]
       )
     ]
@@ -68,9 +68,10 @@ const pkgdef :Spk.PackageDefinition = (
 
   fileList = "sandstorm-files.list",
 
-  alwaysInclude = ["gitlab/vendor", "gitlab/.bundle", "gitlab/app", "gitlab/config", "gitlab/public",
-                   "gitlab/read-only-cache",
-                   "gitlab-shell/hooks", "gitlab-shell/lib",
+  alwaysInclude = ["/opt/app/gitlab/vendor", "/opt/ruby/gitlab-bundle", "/opt/app/gitlab/app",
+                   "/opt/app/gitlab/config", "/opt/app/gitlab/public",
+                   "/opt/app/gitlab/read-only-cache",
+                   "/opt/app/gitlab-shell/hooks", "/opt/app/gitlab-shell/lib",
                    "usr/bin/node"],
 
   bridgeConfig = (
@@ -117,16 +118,16 @@ const guestPermissions     :List(Bool) = [false, false, false, false,  true];
 
 const commandEnvironment : List(Util.KeyValue) =
   [
-    (key = "PATH", value = "/usr/local/rbenv/versions/2.1.6/bin:/usr/local/bin:/usr/bin:/bin"),
+    (key = "PATH", value = "/opt/ruby/rbenv/versions/2.1.6/bin:/usr/local/bin:/usr/bin:/bin"),
     (key = "HOME", value = "/home/git")
   ];
 
 const startCommand :Spk.Manifest.Command = (
-  argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/sh", "start.sh"],
+  argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/bash", "start.sh"],
   environ = .commandEnvironment
 );
 
 const continueCommand :Spk.Manifest.Command = (
-  argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/sh", "continue.sh"],
+  argv = ["/sandstorm-http-bridge", "10000", "--", "/bin/bash", "continue.sh"],
   environ = .commandEnvironment
 );

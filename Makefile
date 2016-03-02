@@ -7,18 +7,18 @@ all: gitlab-setup gitlab-shell-setup
 
 # Set up the GitLab Rails app
 
-gitlab-setup: gitlab/.git gitlab/.bundle initdb.sqlite3
+gitlab-setup: gitlab/.git /opt/ruby/gitlab-bundle initdb.sqlite3
 
 gitlab/.git:
 	git clone ${gitlab_repo} gitlab && cd gitlab && git checkout ${gitlab_repo_branch}
 
-gitlab/.bundle:
-	cd gitlab && bundle install --path .bundle --without test development --jobs 1 --standalone
+/opt/ruby/gitlab-bundle:
+	cd gitlab && bundle install --path /opt/ruby/gitlab-bundle --without test development --jobs 1 --standalone
 
 initdb.sqlite3: gitlab/.bundle
 	rm -rf db
 	mkdir db
-	find gitlab/.bundle -type f -name "jquery.atwho.js" -exec sed -i 's/@ sourceMappingURL=jquery.caret.map//g' {} \;
+	find /opt/ruby/gitlab-bundle -type f -name "jquery.atwho.js" -exec sed -i 's/@ sourceMappingURL=jquery.caret.map//g' {} \;
 	cd gitlab && SECRET_KEY_BASE='not so secret' RAILS_ENV=production ./bin/rake db:create db:setup && SECRET_KEY_BASE='not so secret' RAILS_ENV=production ./bin/rake assets:precompile
 	mv db/db.sqlite3 initdb.sqlite3
 	rm -rf db
