@@ -52,8 +52,8 @@ const pkgdef :Spk.PackageDefinition = (
     searchPath = [
       (sourcePath = "/opt/app/schema.rb", packagePath = "gitlab/db/schema.rb"),
       ( sourcePath = "/opt/app",
-        hidePaths = ["/opt/app/gitlab/.git", "/opt/app/.git",
-                     "/opt/app/gitlab/app/controllers/oauth",
+        hidePaths = ["gitlab/.git", ".git",
+                     "gitlab/app/controllers/oauth",
                      ]
       ),
       ( sourcePath = "/",    # Then search the system root directory.
