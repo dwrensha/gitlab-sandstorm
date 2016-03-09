@@ -50,7 +50,7 @@ const pkgdef :Spk.PackageDefinition = (
     # automatically by running it on a FUSE filesystem. So, the mappings
     # here are only to tell it where to find files that the app wants.
     searchPath = [
-      (sourcePath = "/opt/app/schema.rb", packagePath = "gitlab/db/schema.rb"),
+      ( packagePath = "gitlab/db/schema.rb", sourcePath = "/opt/app/schema.rb" ),
       ( sourcePath = "/opt/app",
         hidePaths = ["gitlab/.git", ".git",
                      "gitlab/app/controllers/oauth",
@@ -68,10 +68,10 @@ const pkgdef :Spk.PackageDefinition = (
 
   fileList = "sandstorm-files.list",
 
-  alwaysInclude = ["/opt/app/gitlab/vendor", "/opt/ruby/gitlab-bundle", "/opt/app/gitlab/app",
-                   "/opt/app/gitlab/config", "/opt/app/gitlab/public",
-                   "/opt/app/gitlab/read-only-cache",
-                   "/opt/app/gitlab-shell/hooks", "/opt/app/gitlab-shell/lib",
+  alwaysInclude = ["gitlab/vendor", "opt/ruby/gitlab-bundle", "gitlab/app",
+                   "gitlab/config", "gitlab/public",
+                   "gitlab/read-only-cache",
+                   "gitlab-shell/hooks", "gitlab-shell/lib",
                    "usr/bin/node"],
 
   bridgeConfig = (
