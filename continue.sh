@@ -4,6 +4,11 @@ set -x -e
 
 base64 /dev/urandom | head -c 30 > /var/gitlab_shell_secret
 
+# The sandbox's /tmp is capped at 16MB. If we don't set TMPDIR, a `git push` bigger than that will fail.
+export TMPDIR=/var/tmp
+rm -rf /var/tmp
+mkdir -p /var/tmp
+
 redis-server /etc/redis.conf &
 echo "started redis-server: " $?
 
