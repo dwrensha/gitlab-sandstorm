@@ -15,7 +15,7 @@ gitlab/.git:
 /opt/ruby/gitlab-bundle:
 	cd gitlab && bundle install --path /opt/ruby/gitlab-bundle --without test development --jobs 1 --standalone
 
-initdb.sqlite3: gitlab/.bundle
+initdb.sqlite3: /opt/ruby/gitlab-bundle
 	rm -rf db
 	mkdir db
 	find /opt/ruby/gitlab-bundle -type f -name "jquery.atwho.js" -exec sed -i 's/@ sourceMappingURL=jquery.caret.map//g' {} \;

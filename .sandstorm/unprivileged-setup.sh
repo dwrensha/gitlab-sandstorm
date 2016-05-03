@@ -12,8 +12,8 @@ export PATH=/opt/ruby/rbenv/bin:$PATH
 export RBENV_ROOT=/opt/ruby/rbenv
 eval "$(rbenv init -)"
 
-rbenv install 2.1.6
-rbenv shell 2.1.6
+rbenv install 2.1.8
+rbenv shell 2.1.8
 
 gem install bundler
 

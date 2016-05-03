@@ -118,7 +118,7 @@ const guestPermissions     :List(Bool) = [false, false, false, false,  true];
 
 const commandEnvironment : List(Util.KeyValue) =
   [
-    (key = "PATH", value = "/opt/ruby/rbenv/versions/2.1.6/bin:/usr/local/bin:/usr/bin:/bin"),
+    (key = "PATH", value = "/opt/ruby/rbenv/versions/2.1.8/bin:/usr/local/bin:/usr/bin:/bin"),
     (key = "HOME", value = "/home/git")
   ];
 
