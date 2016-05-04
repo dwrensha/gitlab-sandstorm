@@ -13,7 +13,7 @@ mkdir -p /var/uploads
 mkdir -p /var/sqlite3
 
 mkdir -p /var/migrations/
-touch /var/migrations/20150818213832
+touch /var/migrations/20160421130527
 
 cp initdb.sqlite3 /var/sqlite3/db.sqlite3
 

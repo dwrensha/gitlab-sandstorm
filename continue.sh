@@ -18,13 +18,13 @@ cd gitlab
 
 export GEM_HOME=/opt/ruby/gitlab-bundle/ruby/2.1.0
 
-if [ -f /var/migrations/20150818213832 ]
+if [ -f /var/migrations/20160421130527 ]
 then
     echo "no migration necessary"
 else
-   RAILS_ENV=production ./bin/rake db:migrate
+   RUBYOPT=-r/opt/ruby/gitlab-bundle/bundler/setup RAILS_ENV=production /opt/ruby/gitlab-bundle/ruby/2.1.0/bin/rake db:migrate
    mkdir -p /var/migrations/
-   touch /var/migrations/20150818213832
+   touch /var/migrations/20160421130527
 fi
 
 RUBYOPT=-r/opt/ruby/gitlab-bundle/bundler/setup RAILS_ENV=production /opt/ruby/gitlab-bundle/ruby/2.1.0/bin/sidekiq -q post_receive -q default -q archive_repo 2>&1 | awk '{print "sidekiq: " $0}' &
