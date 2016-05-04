@@ -1,9 +1,11 @@
 gitlab_repo = https://github.com/dwrensha/gitlabhq.git
 gitlab_repo_branch = sandstorm-app
 gitlab_shell_repo = https://github.com/dwrensha/gitlab-shell.git
-gitlab_shell_repo_branch = vagrant-spk
+gitlab_shell_repo_branch = sandstorm-app
 
-all: gitlab-setup gitlab-shell-setup
+gitlab_workhorse_repo = https://gitlab.com/gitlab-org/gitlab-workhorse.git
+
+all: gitlab-setup gitlab-shell-setup gitlab-workhorse/gitlab-workhorse
 
 # Set up the GitLab Rails app
 
@@ -31,4 +33,8 @@ gitlab-shell-setup: gitlab-shell/.git
 gitlab-shell/.git:
 	git clone ${gitlab_shell_repo} gitlab-shell && cd gitlab-shell && git checkout ${gitlab_shell_repo_branch}
 
+gitlab-workhorse/.git:
+	git clone ${gitlab_workhorse_repo} gitlab-workhorse
 
+gitlab-workhorse/gitlab-workhorse: gitlab-workhorse/.git
+	cd gitlab-workhorse && make
