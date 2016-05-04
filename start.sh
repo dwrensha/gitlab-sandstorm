@@ -17,10 +17,4 @@ touch /var/migrations/20150818213832
 
 cp initdb.sqlite3 /var/sqlite3/db.sqlite3
 
-type source
-
 source continue.sh
-
-
-
-
