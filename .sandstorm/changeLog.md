@@ -1,10 +1,10 @@
 ### v.2016.05.05 (8.7.1)
 - Fix appMarketingVersion. The year is not 2017.
 
-### v.2016.05.05 (8.7.1)
+### v.2017.05.05 (8.7.1)
 - Use a saner migration strategy for the Users.ldap_email column.
 
-### v.2016.05.04 (8.7.1)
+### v.2017.05.04 (8.7.1)
 - Update to upstream version 8.7.1
 - Disable repo renaming, because we don't actually support it.
 - Synchronize the path from the iframe to the browser's location bar.
