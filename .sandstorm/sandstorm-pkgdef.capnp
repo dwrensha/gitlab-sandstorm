@@ -8,9 +8,9 @@ const pkgdef :Spk.PackageDefinition = (
 
   manifest = (
 
-    appVersion = 5,  # Increment this for every release.
+    appVersion = 6,  # Increment this for every release.
     appTitle = (defaultText = "GitLab"),
-    appMarketingVersion = (defaultText = "2017.05.04 (8.7.1)"),
+    appMarketingVersion = (defaultText = "2017.05.05 (8.7.1)"),
 
     metadata = (
       icons = (
