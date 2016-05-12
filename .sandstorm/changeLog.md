@@ -1,3 +1,6 @@
+### v.2016.05.12 (8.7.1)
+- Fix bug where "blame" feature caused a 500 error.
+
 ### v.2016.05.05 (8.7.1)
 - Fix appMarketingVersion. The year is not 2017.
 

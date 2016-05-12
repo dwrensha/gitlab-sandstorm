@@ -8,9 +8,9 @@ const pkgdef :Spk.PackageDefinition = (
 
   manifest = (
 
-    appVersion = 7,  # Increment this for every release.
+    appVersion = 8,  # Increment this for every release.
     appTitle = (defaultText = "GitLab"),
-    appMarketingVersion = (defaultText = "2016.05.05 (8.7.1)"),
+    appMarketingVersion = (defaultText = "2016.05.12 (8.7.1)"),
 
     metadata = (
       icons = (
@@ -68,7 +68,7 @@ const pkgdef :Spk.PackageDefinition = (
 
   fileList = "sandstorm-files.list",
 
-  alwaysInclude = ["gitlab/vendor", "opt/ruby/gitlab-bundle", "gitlab/app",
+  alwaysInclude = ["gitlab/vendor", "opt/ruby/gitlab-bundle", "gitlab/app", "gitlab/lib",
                    "gitlab/config", "gitlab/public",
                    "gitlab/read-only-cache",
                    "gitlab-shell/hooks", "gitlab-shell/lib",
