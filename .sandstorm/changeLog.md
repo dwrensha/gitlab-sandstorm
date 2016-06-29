@@ -1,3 +1,6 @@
+### v.2016.06.29 (8.7.1)
+- Fix bug where only the grian owner could see the list of issues.
+
 ### v.2016.05.12 (8.7.1)
 - Fix bug where "blame" feature caused a 500 error.
 
