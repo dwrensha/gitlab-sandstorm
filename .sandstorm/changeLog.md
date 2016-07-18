@@ -1,3 +1,7 @@
+### v.2016.07.19 (8.7.9)
+- Fix bug where relative links in the wiki could cause the page to fail to load.
+- Add target=_blank to external links.
+
 ### v.2016.06.29 (8.7.1)
 - Fix bug where only the grian owner could see the list of issues.
 
