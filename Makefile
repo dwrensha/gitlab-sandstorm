@@ -37,4 +37,4 @@ gitlab-workhorse/.git:
 	git clone ${gitlab_workhorse_repo} gitlab-workhorse
 
 gitlab-workhorse/gitlab-workhorse: gitlab-workhorse/.git
-	cd gitlab-workhorse && make
+	cd gitlab-workhorse && git checkout f184885d77ba7 && make
