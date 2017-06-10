@@ -30,7 +30,8 @@ const pkgdef :Spk.PackageDefinition = (
        pgpKeyring = embed "pgp-keyring",
        description = (defaultText = embed "description.md"),
        shortDescription = (defaultText = "Git hosting"),
-       screenshots = [(width = 448, height = 281, png = embed "screenshot.png")],
+       screenshots = [(width = 448, height = 281, png = embed "screenshot.png"),
+       (width = 1280, height = 720, png = embed "screenshot_gitlab_home.png")],
        changeLog = (defaultText = embed "changeLog.md"),
      ),
 
